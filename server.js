@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-    res.render("index", {title: "Home Page", message: "Welcome to EJS"})
+        res.render("landing page")
 })
 
 app.listen(port, () => {
