@@ -12,6 +12,20 @@ const landigPageEs = {
     paso3text: "Complementando tu estudio con esta web, conseguiras tus metas mas rapidamente",
     titulo2: "Resultados",
     textTitulo2: "Usando esta app podras lograr resultados sorprendentes en tus examenes o estudiando para conseguir el trabajo de tus sueños. Podras almacenar tus AnkiQuestions por categorias y customizar tu experiencia.",
-    eNormal: "Estudio normal",
-    eAQ: "Con AnkiQuestions"
+}
+
+const landigPageEn = {
+    bienvenido: "Welcome to",
+    titulo: "AnkiQuestions!",
+    registro: "Sign in",
+    inicioSesion: "Log in",
+    funcionamiento: "How does it work?",
+    paso1: "Step 1",
+    paso2: "Step 2",
+    paso3: "Step 3",
+    paso1text: "Transform your study notes into question format",
+    paso2text: "Study by implementing techniques such as Active Recall and not just Passive Learning in an easy way",
+    paso3text: "By complementing your study with this website, you will achieve your goals more quickly",
+    titulo2: "Results",
+    textTitulo2: "Using this app you can achieve surprising results on your exams or studying to get the job of your dreams. Yuo can store your AnkiQuestions by categories and customize your experience.",
 }
