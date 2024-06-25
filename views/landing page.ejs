@@ -1,30 +1,39 @@
+    <%- include("./header") %>
 
-    <main>
-        <div>
+    <main id="landingPage">
+        <div class="primeraP">
             <h2>¡Bienvenido a</h2>
             <h1>AnkiQuestions!</h1>
-            <button>Registrarse</button>
-            <button>IniciarSesion</button>
-            <img src="" />
-            <button class="pageDown"></button>
+            <button class="primerB">Registrarse</button>
+            <button class="segundoB">Iniciar Sesion</button>
+            <img src="./libros.png" />
+            <button class="pageDown"><img src="./arrowdown.png" /></button>
         </div>
-        <div>
-            <h3></h3>
-            <img src="" />
-            <h4></h4>
-            <p></p>
-            <img src="" />
-            <h4></h4>
-            <p></p>
-            <img src="" />
-            <h4></h4>
-            <p></p>
-            <button class="pageDown"></button>
+        <div class="segundaP">
+            <h3>Demostracion</h3>
+            <div class="paso1">
+                <img class="fondoNaranja" src="./reloj.png" />
+                <h4>Paso 1</h4>
+                <p>Pasa tus notas de estudio a formato preguntas</p>
+            </div>
+            <div class="paso2">
+                <img class="fondoNaranja" src="./silbato.png" />
+                <h4>Paso 2</h4>
+                <p>Estudia usando tecnicas como active recall y no solo passive learning</p>
+            </div>
+            <div class="paso3">
+                <img class="fondoNaranja" src="./trofeo.png" />
+                <h4>Paso 3</h4>
+                <p>Complementando tu estudio con esta web, conseguiras tus metas mas rapidamente</p>
+            </div>
+            <button class="pageDown"><img id="flechaAbajo" src="./arrowdown.png" /></button>
         </div>
-        <div>
+        <div class="tercerP">
             <h3></h3>
             <p></p>
             <img src="" />
             <img src="" />
         </div>
     </main>
+
+        <% include("./footer") %>
