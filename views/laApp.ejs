@@ -19,11 +19,14 @@
                     <div class="titulo">
                         <h3>Categorias</h3>
                     </div>
-                    <div class="cuadroCategoria"></div>
-                    <div class="cuadroCategoria"></div>
                 </div>
-                <div class="configuracionMarcador">configuracionMarcador</div>
-                <div class="nombreUsuario">nombre Usuario</div>
+                <div class="configuracionMarcador">
+                    <div class="cuadrito solo1">1</div>
+                    <div class="cuadrito solo10">10</div>
+                    <div class="cuadrito solo25">25</div>
+                    <div class="cuadrito solo50">50</div>
+                </div>
+                <div class="nombreUsuario">Rux Castillo</div>
             </div>
 
             <div id="app">
@@ -59,12 +62,14 @@
                         </div>
                         <div class="contador">
                             <div class="contadorMal"></div>
+                            <div class="raya"></div>
                             <div class="contadorBien"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </main>
+        <script id="serverData"> <%- JSON.stringify(home)%> </script>
+        <script src="laApp.js"></script>
     </body>
 </html>
