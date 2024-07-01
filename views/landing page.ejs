@@ -7,9 +7,11 @@
             <button class="primerB">Registrarse</button>
             <button class="segundoB">Iniciar Sesion</button>
             <img src="./libros.png" />
-            <button class="pageDown"><img src="./arrowdown.png" /></button>
+            <a href="#segundaPagina">
+                <button class="pageDown"><img src="./arrowdown.png" /></button>
+            </a>
         </div>
-        <div class="segundaP">
+        <div class="segundaP" id="segundaPagina">
             <h3>Demostracion</h3>
             <div class="paso1">
                 <div class="imgOrange">
@@ -44,9 +46,11 @@
                 </div>
                 <p>Complementando tu estudio con esta web, conseguiras tus metas mas rapidamente</p>
             </div>
-            <button class="pageDown"><img id="flechaAbajo" src="./arrowdown.png" /></button>
+            <a href="#terceraPagina">
+                <button class="pageDown"><img id="flechaAbajo" src="./arrowdown.png" /></button>
+            </a>
         </div>
-        <div class="tercerP">
+        <div class="tercerP" id="terceraPagina">
             <div class="letras">
                 <div class="centerTitulo">
                     <h3>Resultados</h3>
@@ -54,12 +58,13 @@
                 <p>Usando esta app podras lograr resultados sorprendentes en tus examenes o estudiando para conseguir el trabajo de tus sueños. Podras almacenar tus AnkiQuestions por categorias y customizar tu experiencia.</p>
             </div>
             <div class="estadistica">
-                <div class="num25">25</div>
-                <div class="num20">20</div>
-                <div class="num15">15</div>
-                <div class="num10">10</div>
-                <div class="num5">5</div>
-                <div class="num0">0</div>
+                <div class="num30">0</div>
+                <div class="num25">30</div>
+                <div class="num20">25</div>
+                <div class="num15">20</div>
+                <div class="num10">15</div>
+                <div class="num5">10</div>
+                <div class="num0">5</div>
                 <div class="uno"></div>
                 <div class="dos"></div>
                 <div class="tres"></div>
@@ -77,9 +82,11 @@
             </div>
             <div class="persona">
                 <div class="invitadoBoton">
-                    <button onclick="location.href='http://localhost:3000/app'">Ingresa como invitado</button>
+                    <button onclick="location.href='http://localhost:3000/app'">Ingresar como invitado</button>
                 </div>
-                <img src="./muñeca.png" />
+                <div class="muñeca">
+                    <img src="./muñeca.png" />
+                </div>
             </div>
         </div>
     </main>
