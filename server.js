@@ -1,16 +1,15 @@
 import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
-import { fileURLToPath } from "url";
 import env from "dotenv";
 import axios from "axios";
 
 env.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const __dirname = path.resolve()
-const API_URL = process.env.API_URL || "http://localhost:4000";
+const API_URL = process.env.API_URL;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -23,13 +22,12 @@ app.get("/", (req, res) => {
         res.render("landing page")
 })
 
-app.get("/app", async (req,res) => {
+app.get("/app", async (req, res) => {
         try {
-                console.log(`${API_URL}/home`)
                 const response = await axios.get(`${API_URL}/home`);
-                console.log(response);
                 res.render("laApp", { home: response.data });
         } catch (error) {
+                console.log("aqui esta el error 44444")
                 res.status(500).json({ message: "Error fetching home", error});
         }
 })

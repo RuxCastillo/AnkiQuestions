@@ -6,7 +6,7 @@ import env from "dotenv";
 env.config();
 
 const app = express();
-const port = process.env.API_URL || 4000;
+const port = process.env.PORT_API;
 let laCategoria;
 
 const db = new pg.Client({
@@ -42,7 +42,7 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 app.get("/api/todaDB", (req, res) => {
-    console.log(todoDataBase);
+    //console.log(todoDataBase);
 })
 
 app.get("/api/home", (req, res) => {
