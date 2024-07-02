@@ -14,12 +14,10 @@ function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria
 }
 
-function nuevaPreguntaBoton() {
     document.querySelector(".nuevaPregunta button").addEventListener("click", llamandoUnaPregunta) 
-    console.log("presionaste nueva pregunta")
-}
 
 async function llamandoUnaPregunta() {
+    console.log("llamandounapreguntafunction")
         let nombreCategoriaAEnviar = document.querySelector(".categoriaActual h2").innerText
         let soloUnaPregunta;
 

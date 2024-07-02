@@ -54,3 +54,23 @@ function poniendoTodoTextoAEditar(respuestaServer) {
     document.querySelector(".editarCategoriaYaExistente").value = respuestaServer[0].categoria
     document.querySelector(".editarNuevaCategoria").value = respuestaServer[0].categoria
 }
+
+const submitEditarButton = document.querySelector(".segundoT").addEventListener("click", borrarCamposEditar);
+
+function borrarCamposEditar() {
+    console.log("le diste click a editar")
+    document.querySelector(".editarNumId").value = "";
+    document.querySelector(".editarPregunta").value = "";
+    document.querySelector(".editarRespuesta").value = "";
+    document.querySelector(".editarNuevaCategoria").value = "";
+}
+
+const submitCrearButton = document.querySelector(".primerT").addEventListener("click", borrarCamposCrear);
+
+function borrarCamposCrear() {
+    console.log("le diste click a crear")
+    document.querySelector(".crearPregunta").value = ""    
+    document.querySelector(".crearRespuesta").value = ""
+    document.querySelector(".crearNuevaCategoria").value = ""
+}
+
