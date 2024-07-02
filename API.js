@@ -41,16 +41,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.use(bodyParser.json());
 
-app.get("/todaDB", (req, res) => {
+app.get("/api/todaDB", (req, res) => {
     console.log(todoDataBase);
 })
 
-app.get("/home", (req, res) => {
+app.get("/api/home", (req, res) => {
     console.log(todasCategorias);
     res.send(todasCategorias);
 })
 
-app.get("/unaPreguntaDeCategoriaEspecifica", (req, res) => {
+app.get("/api/unaPreguntaDeCategoriaEspecifica", (req, res) => {
 
     const buscandoCategoria = req.query.categoria 
     console.log(buscandoCategoria)
@@ -69,7 +69,7 @@ app.get("/unaPreguntaDeCategoriaEspecifica", (req, res) => {
     })
 })
 
-app.get("/preguntaporid", (req, res) => {
+app.get("/api/preguntaporid", (req, res) => {
 
     const buscandoId = req.query.id 
     console.log(buscandoId)
@@ -88,7 +88,7 @@ app.get("/preguntaporid", (req, res) => {
     })
 })
 
-app.post("/editandopregunta", async (req, res) => {
+app.post("/api/editandopregunta", async (req, res) => {
     const laInfoNueva = req.body;
     let id = req.body.numId;
     let pregunta = req.body.preguntaseditar
@@ -114,7 +114,7 @@ app.post("/editandopregunta", async (req, res) => {
     })
 })
 
-app.post("/agregarpreguntaapi", async (req, res) => {
+app.post("/api/agregarpreguntaapi", async (req, res) => {
     const lainfonueva = req.body;
     let pregunta = req.body.preguntacrear;
     let respuesta = req.body.respuestacrear;
