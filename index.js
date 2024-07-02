@@ -42,7 +42,6 @@ let todasCategorias;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.set("views");
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
