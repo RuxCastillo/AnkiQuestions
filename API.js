@@ -6,15 +6,15 @@ import env from "dotenv";
 env.config();
 
 const app = express();
-const port = process.env.PORT_API;
+const port = process.env.PORT_API || 4000;
 let laCategoria;
 
 const db = new pg.Client({
-    user: process.env.USER,
-    host: process.env.HOST,
-    database: process.env.DATABASE,
-    password: process.env.PASSWORD,
-    port: process.env.PORT_DB,
+    user: process.env.POSTGRES_USER,
+    host: process.env.POSTGRES_HOST,
+    database: process.env.POSTGRES_DATABASE,
+    password: process.env.POSTGRES_PASSWORD,
+    port: process.env.POSTGRES_URL,
 });
 
 db.connect();
