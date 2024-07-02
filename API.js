@@ -46,8 +46,13 @@ app.get("/api/todaDB", (req, res) => {
 })
 
 app.get("/api/home", (req, res) => {
-    console.log(todasCategorias);
-    res.send(todasCategorias);
+    try {
+        console.log(todasCategorias);
+        res.send(todasCategorias);
+    } catch (err) {
+        res.send("error apihome")
+        console.log("hubo un error en apihome", err)
+    }
 })
 
 app.get("/api/unaPreguntaDeCategoriaEspecifica", (req, res) => {
