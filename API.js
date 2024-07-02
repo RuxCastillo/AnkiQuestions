@@ -6,7 +6,7 @@ import env from "dotenv";
 env.config();
 
 const app = express();
-const port = process.env.PORT_API || 4000;
+const port = process.env.API_URL || 4000;
 let laCategoria;
 
 const db = new pg.Client({
@@ -36,14 +36,6 @@ let todasCategorias;
             todasCategorias = res.rows;
         }
     })
-
-function enviandoUnaPregunta() {
-    let datosFiltrados = todoDataBase.filter((item) => {return (item.categoria === laCategoria)});
-    let numRan = Math.floor(Math.random() * datosFiltrados.length);
-    let resultado = datosFiltrados[numRan];
-    console.log(datosFiltrados, numRan, resultado, laCategoria);
-    return resultado;
-}
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -142,11 +134,6 @@ app.post("/agregarpreguntaapi", async (req, res) => {
         console.log("pregunta actualizada")
     })
 })
-
-
-
-
-
 
 
 app.listen(port, () => {

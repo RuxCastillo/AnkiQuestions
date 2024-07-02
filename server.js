@@ -8,9 +8,8 @@ import axios from "axios";
 env.config();
 
 const app = express();
-const port = process.env.PORT_SERVER || 3000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const port = process.env.PORT || 3000;
+const __dirname = path.resolve()
 const API_URL = process.env.API_URL || "http://localhost:4000";
 
 app.set("views", path.join(__dirname, "views"));
