@@ -8,7 +8,7 @@ import axios from "axios";
 env.config();
 
 const app = express();
-const port = process.env.PORT_SERVER;
+const port = process.env.PORT_SERVER || 3002;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const API_URL = "http://localhost:4000";
@@ -110,5 +110,3 @@ app.listen(port, () => {
 
 })
 
-
-module.exports = app;
