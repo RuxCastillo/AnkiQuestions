@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT_SERVER || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const API_URL = "http://localhost:4000";
+const API_URL = process.env.API_URL || "http://localhost:4000";
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
