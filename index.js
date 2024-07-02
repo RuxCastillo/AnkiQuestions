@@ -1,15 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
-import path from "path";
 import env from "dotenv";
-import axios from "axios";
 import pg from "pg";
 
 env.config();
 
 const app = express();
 const port = process.env.PORT;
-const __dirname = path.resolve();
 
 const db = new pg.Client({
     user: process.env.POSTGRES_USER,
@@ -39,7 +36,7 @@ let todasCategorias;
         }
     })
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
