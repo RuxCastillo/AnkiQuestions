@@ -94,7 +94,7 @@ app.post("/agregarPregunta", async (req, res) => {
     const query = `INSERT INTO todaslaspreguntas (preguntas, respuestas, categoria) VALUES ($1, $2, $3);`
     const result = await db.query(query, [pregunta, respuesta, categoria]) 
 
-       res.json(result.rows[0])
+       console.log(result.rows[0])
        console.log("fue agregada con exito a la base de datos la pregunta")
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
@@ -111,13 +111,14 @@ app.get("/crearoeditar", (req, res) => {
 
 app.get("/obteniendoinfoporidparaeditar", async (req, res) => {
     let elIdPreguntaAEditar = req.query.id
+    console.log(elIdPreguntaAEditar)
     if(!elIdPreguntaAEditar) {
         return res.status(400).send("Falta el parametro de categoria para pasar info de pregunta a editar")
     }
 
     try {
         const query = `SELECT preguntas, respuestas, categoria FROM todaslaspreguntas WHERE id = $1;`;
-        let result = await db.query(query, [buscandoId]) 
+        let result = await db.query(query, [elIdPreguntaAEditar]) 
 
         res.send(result.rows)
     } catch (err) {
@@ -127,9 +128,10 @@ app.get("/obteniendoinfoporidparaeditar", async (req, res) => {
 
 app.post("/updatepregunta", async (req, res) => {
     const lainfonueva = req.body;
-    let pregunta = req.body.preguntaeditar
+    let pregunta = req.body.preguntaseditar
     let respuesta = req.body.respuestaeditar;
     let categoria = req.body.categoriaeditar;
+    let id = req.body.numId;
     if(!lainfonueva) {
         return res.status(400).send("falta el parametro de la infor nueva para editar la pregunta")
     }
@@ -142,7 +144,8 @@ app.post("/updatepregunta", async (req, res) => {
             return res.status(404).send("Pregunta no encontrada editandopregunta api");
         }
 
-        res.json(result.rows[0]);
+        console.log(result.rows[0])
+        //res.json(result.rows[0]);
     } catch (err) {
         res.status(500).send("Error interno al editar la pregunta")
     }
