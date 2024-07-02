@@ -31,7 +31,7 @@ async function peticionBuscarPregunta() {
     console.log(idABuscar)
     let laRespuesta;
 
-    const url = `http://localhost:3000/obteniendopreguntaparaeditar?id=${idABuscar}`
+    const url = `/obteniendoinfoporidparaeditar?id=${idABuscar}`
 
     try {
         const response = await fetch(url);

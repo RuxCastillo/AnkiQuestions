@@ -23,7 +23,7 @@
                         <div class="segundoT"><h2>Editar</h2></div>
                     </div>
 
-                    <form method="POST" action="http://localhost:3000/agregarpregunta" class="crear" id="crearForm">
+                    <form method="POST" action="/agregarPregunta" class="crear" id="crearForm">
                         <textarea name="preguntacrear" class="crearPregunta"></textarea>
                         <textarea name="respuestacrear" class="crearRespuesta"></textarea>
                         <select class="crearCategoriasYaExistentes"></select>
@@ -31,7 +31,7 @@
                         <button type="submit" class="crearsubmit">Crear</button>
                     </form>
 
-                    <form method="POST" action="http://localhost:3000/informacioneditadapregunta" class="editar" id="editForm">
+                    <form method="POST" action="/updatepregunta" class="editar" id="editForm">
                         <input type="number" class="editarNumId" name="numId"/>
                         <button type="button" class="editarBuscarId">Buscar</button>
                         <textarea type="text" name="preguntaseditar" id="lapregunta" class="editarPregunta"></textarea>

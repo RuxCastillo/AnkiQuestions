@@ -1,4 +1,4 @@
-import express from "express";
+/* import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
 import env from "dotenv";
@@ -106,4 +106,4 @@ app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 
 })
-
+ */

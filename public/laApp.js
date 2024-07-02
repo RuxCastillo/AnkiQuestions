@@ -21,7 +21,7 @@ async function llamandoUnaPregunta() {
         let nombreCategoriaAEnviar = document.querySelector(".categoriaActual h2").innerText
         let soloUnaPregunta;
 
-        const url = `http://localhost:3000/unapregunta?categoria=${nombreCategoriaAEnviar}`
+        const url = `/obteniendoPregunta?categoria=${nombreCategoriaAEnviar}`
 
         try {
             const response = await fetch(url);
