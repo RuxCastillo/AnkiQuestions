@@ -94,9 +94,7 @@ app.post("/agregarPregunta", async (req, res) => {
     const query = `INSERT INTO todaslaspreguntas (preguntas, respuestas, categoria) VALUES ($1, $2, $3);`
     const result = await db.query(query, [pregunta, respuesta, categoria]) 
 
-       console.log(result.rows[0])
-       console.log("fue agregada con exito a la base de datos la pregunta")
-       return res.status(200);
+/*        console.log(result.rows[0]) */
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
@@ -145,7 +143,7 @@ app.post("/updatepregunta", async (req, res) => {
             return res.status(404).send("Pregunta no encontrada editandopregunta api");
         }
 
-        console.log(result.rows[0])
+/*         console.log(result.rows[0]) */
         //res.json(result.rows[0]);
     } catch (err) {
         res.status(500).send("Error interno al editar la pregunta")
