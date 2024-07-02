@@ -57,6 +57,7 @@ app.get("/app", (req, res) => {
 app.get("/obteniendoPregunta", async (req, res) => {
     try {
         const buscandoCategoria = req.query.categoria
+        console.log(buscandoCategoria)
         if(!buscandoCategoria) {
             return res.status(400).send("Falta el parametro de la categoria para enviarla")
         }
@@ -64,8 +65,9 @@ app.get("/obteniendoPregunta", async (req, res) => {
         const query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas WHERE categoria = $1;`;
         let result = await db.query(query, [buscandoCategoria]) 
         let response = result.rows
-        let numeroAleatorio = Math.floor(Math.random() * response.data.length);
+        let numeroAleatorio = Math.floor(Math.random() * response.length);
         let preguntaAleatoria = response[numeroAleatorio]
+        console.log(preguntaAleatoria, "se llego hasta aqui")
         res.send(preguntaAleatoria);
     } catch (error) {
         res.status(500).json({ message: "Error fetching obteniendo pregunta", error});
@@ -102,7 +104,7 @@ app.get("/crearoeditar", (req, res) => {
 
 app.get("/obteniendoinfoporidparaeditar", async (req, res) => {
     let elIdPreguntaAEditar = req.query.id
-    if(!buscandoId) {
+    if(!elIdPreguntaAEditar) {
         return res.status(400).send("Falta el parametro de categoria para pasar info de pregunta a editar")
     }
 
