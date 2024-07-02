@@ -1,18 +1,20 @@
 import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
+import { fileURLToPath } from "url";
 import env from "dotenv";
 import pg from "pg";
 
 env.config();
 
 const app = express();
-const port = process.env.PORT;
-const __dirname = path.resolve()
+const port = process.env.PORT || 3001;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "views")));
 app.set("view engine", "ejs");
 
 const db = new pg.Client({
