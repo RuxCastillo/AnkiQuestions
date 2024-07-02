@@ -59,22 +59,47 @@ app.get("/home", (req, res) => {
 })
 
 app.get("/unaPreguntaDeCategoriaEspecifica", (req, res) => {
+
     const buscandoCategoria = req.query.categoria 
+    console.log(buscandoCategoria)
     if(!buscandoCategoria) {
         return res.status(400).send("Falta el parametro de categoria unaPreguntaDeCategoriaEspecifica");
     }
 
-    const query = `SELECT preguntas, respuestas FROM todaslaspreguntas WHERE categoria ILIKE $1;`;
+    const query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas WHERE categoria = $1;`;
     db.query(query, [buscandoCategoria], (err, result) => {
         if(err) {
             console.error("Error ejecutando la consulta: unaPreguntaDecategoriaEspecifica", err);
             return res.status(500).send("Error en el servidor");
         }
+        console.log(result.rows)
         res.send(result.rows);
     })
 })
 
-app.get("/")
+app.get("/preguntaporid", (req, res) => {
+
+    const buscandoId = req.query.id 
+    console.log(buscandoId)
+    if(!buscandoId) {
+        return res.status(400).send("Falta el parametro de categoria preguntaporid API");
+    }
+
+    const query = `SELECT preguntas, respuestas, categoria FROM todaslaspreguntas WHERE id = $1;`;
+    db.query(query, [buscandoId], (err, result) => {
+        if(err) {
+            console.error("Error ejecutando la consulta: preguntaporid API", err);
+            return res.status(500).send("Error en el servidor");
+        }
+        console.log(result.rows)
+        res.send(result.rows);
+    })
+})
+
+app.post("/editandopregunta", (req, res) => {
+    const laInfoNueva = req.body;
+    console.log(laInfoNueva)
+})
 
 
 

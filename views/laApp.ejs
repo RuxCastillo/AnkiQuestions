@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <link rel="stylesheet" href="./laApp.css" />
+        <link rel="stylesheet" href="./barra lateral.css" />
         <link rel="stylesheet" href="./Roca Regular.ttf" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="UTF-8" />
@@ -10,29 +11,13 @@
     <body>
         <main>
 
-            <div id="barraLateral">
-                <h1>AnkiQuestion</h1>
-                <div class="categoriaActual">
-                    <h2>Categoria Actual</h2>
-                </div>
-                <div class="categorias">
-                    <div class="titulo">
-                        <h3>Categorias</h3>
-                    </div>
-                </div>
-                <div class="configuracionMarcador">
-                    <div class="cuadrito solo1">1</div>
-                    <div class="cuadrito solo10">10</div>
-                    <div class="cuadrito solo25">25</div>
-                    <div class="cuadrito solo50">50</div>
-                </div>
-                <div class="nombreUsuario">Rux Castillo</div>
-            </div>
+            <%- include("./barra lateral") %>
 
             <div id="app">
                 <div class="preguntaInfo">
                     <div class="info">i</div>
-                    <div class="pregunta"><p class="textoPregunta">hola</p></div>
+                    <div class="pregunta"><p class="textoPregunta">Selecciona una categoria para iniciar con las preguntas. ¡Tu puedes conseguir ese trabajo que quieres!</p></div>
+                    <div class="numeroId"><p>0</p></div>
                 </div>
                 <div class="respuestas">
                     <div class="respuestaUsuario">
@@ -41,15 +26,16 @@
                     <div class="respuestaCorrecta">
                         <textarea></textarea>
                     </div>
+                        <button>Ver Respuesta</button>
                 </div>
                 <div class="botones">
                     <div class="botonesMal">
                         <div class="divLosBotones">
                             <div class="otraPregunta">
-                                <button>otra pregunta</button>
+                                <button onclick="location.href='http://localhost:3000/editandopreguntaporid'">Editar/Agregar pregunta</button>
                             </div>
                             <div class="nuevaPregunta">
-                                <button>nueva pregunta</button>
+                                <button>Nueva pregunta</button>
                             </div>
                         </div>
                         <div class="mal">
@@ -61,9 +47,9 @@
                             <button>Bien</button>
                         </div>
                         <div class="contador">
-                            <div class="contadorMal"></div>
+                            <div class="contadorMal">0</div>
                             <div class="raya"></div>
-                            <div class="contadorBien"></div>
+                            <div class="contadorBien">0</div>
                         </div>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ async function llamandoUnaPregunta() {
             if (!response.ok) {
                 throw new Error(`Error llamandounapreguntafunction: ${response.statusText}`)
             }
-            const data = await response.json();
+            let data = await response.json();
             soloUnaPregunta = data;
             paseleSrPregunta(soloUnaPregunta)
         } catch(error) {
@@ -43,12 +43,17 @@ function paseleSrPregunta(todaLaCategoria) {
     document.querySelector(".textoPregunta").innerText = todaLaCategoria.preguntas
     document.querySelector(".respuestaCorrecta textarea").value = todaLaCategoria.respuestas
     document.querySelector(".respuestaCorrecta textarea").style.display = "none"
-    document.querySelector(".textoPregunta").addEventListener("click", revelarRespuesta)
+    document.querySelector(".respuestas button").style.display = "block"
+    document.querySelector(".respuestas button").addEventListener("click", revelarRespuesta)
+    document.querySelector(".preguntaInfo .numeroId p").innerText = todaLaCategoria.id
 
 }
 
 function revelarRespuesta() {
     document.querySelector(".respuestaCorrecta textarea").style.display = "block"
+    document.querySelector(".respuestas button").style.display = "none"
 }
 
-nuevaPreguntaBoton()
+function clickABienoMal() {
+    document.querySelector("")
+}

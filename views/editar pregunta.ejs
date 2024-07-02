@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./editar pregunta.css" />
+        <link rel="stylesheet" href="./barra lateral.css" />
+        <link rel="stylesheet" href="./Roca Regular.ttf" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AnkiQuestions Editar/Agregar</title>
+    </head>
+    <body>
+        <main>
+
+            <%- include("./barra lateral") %>
+
+
+            <div id="app">
+                <div class="crearEditar">
+
+                    <div class="lostitulos">
+                        <div class="primerT"><h2>Crear</h2></div>
+                        <div class="relleno"></div>
+                        <div class="segundoT"><h2>Editar</h2></div>
+                    </div>
+
+                    <form method="POST" action="" class="crear">
+                        <textarea class="crearPregunta"></textarea>
+                        <textarea class="crearRespuesta"></textarea>
+                        <select class="crearCategoriasYaExistentes"></select>
+                        <input type="text" class="crearNuevaCategoria" />
+                        <button type="submit" class="crearsubmit">Crear</button>
+                    </form>
+
+                    <form method="POST" action="http://localhost:3000/informacioneditadapregunta" class="editar">
+                        <input type="text" class="editarNumId" />
+                        <button type="button" class="editarBuscarId">Buscar</button>
+                        <textarea name="preguntaseditar" id="lapregunta" class="editarPregunta"></textarea>
+                        <textarea class="editarRespuesta"></textarea>
+                        <select class="editarCategoriaYaExistente"></select>
+                        <input type="text" class="editarNuevaCategoria" />
+                        <button type="submit" class="editarsubmit">Editar</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </main>
+        <script id="serverData"> <%- JSON.stringify(home)%></script>
+        <script src="editar pregunta.js"></script>
+    </body>
+</html>

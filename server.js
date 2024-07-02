@@ -38,7 +38,7 @@ app.get("/unapregunta", async (req, res) => {
         try {
                 console.log(`${API_URL}/unaPreguntaDeCategoriaEspecifica?categoria=${enviandoCategoriaAAPI}`)
                 const response = await axios.get(`${API_URL}/unaPreguntaDeCategoriaEspecifica?categoria=${enviandoCategoriaAAPI}`)
-                let numeroAleatorio = Math.floor(Math.random() * response.data.length) + 1;
+                let numeroAleatorio = Math.floor(Math.random() * response.data.length);
                 let preguntaAleatoria = response.data[numeroAleatorio]
                 console.log(preguntaAleatoria)
                 res.send(preguntaAleatoria)
@@ -46,6 +46,49 @@ app.get("/unapregunta", async (req, res) => {
                 res.status(500).json({ message: "Error fetching unaPreguntaDeCategoriaEspecifica", error})
         }
 })
+
+app.get("/editandopreguntaporid", async (req, res) => {
+        try {
+                const response = await axios.get(`${API_URL}/home`);
+                res.render("editar pregunta", { home: response.data });
+        } catch (error) {
+                res.status(500).json({ message: "Error fetching home", error});
+        }
+})
+
+app.get("/obteniendopreguntaparaeditar", async (req, res) => {
+        let elIdPreguntaAEditar = req.query.id
+        try {
+                console.log(`${API_URL}/preguntaporid?id=${elIdPreguntaAEditar}`)
+                const response = await axios.get(`${API_URL}/preguntaporid?id=${elIdPreguntaAEditar}`)
+                const respuesta = response.data
+                console.log(respuesta)
+                res.send(respuesta)
+        } catch (error) {
+                res.status(500).json({ message: "Error fetching obteniendopreguntaparaeditar server", error})
+        }
+                
+        
+})
+
+app.post("/informacioneditadapregunta", (req, res) => {
+        let todo = req.body;
+                console.log(todo)
+/*         try {
+                console.log(`${API_URL}/editandopregunta`)
+                const response = await axios.post(`${API_URL}/editandopregunta`, req.body)
+                const respuesta = response.data
+                console.log(respuesta)
+        } catch (error) {
+                res.status(500).json({ message: "Error fetching obteniendopreguntaparaeditar server", error})
+        } */
+                
+})
+
+
+
+
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
