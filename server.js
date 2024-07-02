@@ -3,9 +3,6 @@ import bodyParser from "body-parser";
 import path from "path";
 import env from "dotenv";
 import axios from "axios";
-window.axios = axios
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest"
-window.axios.defaults.withCredentials = true
 
 env.config();
 
