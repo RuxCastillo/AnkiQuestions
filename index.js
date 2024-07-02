@@ -96,6 +96,7 @@ app.post("/agregarPregunta", async (req, res) => {
 
        console.log(result.rows[0])
        console.log("fue agregada con exito a la base de datos la pregunta")
+       return res.status(200);
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
