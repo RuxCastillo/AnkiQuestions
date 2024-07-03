@@ -1,0 +1,23 @@
+1.0 ya esta deploy el 2 julio del 2024, medio sirve y le faltan muchas funcionalidades pero ya esta conectada front, end y postgre
+
+
+1.1 la estoy haciendo
+
+
+mejoras que se le puede hacer a la app.
+
+las categorias no salen siempre y hay que refrescar la pagina algunas veces.
+que sea necesario los 3 campos al crear una pregunta para que no se vaya ninguna sin categoria o asi.
+boton de borrar pregunta
+lista de preguntas donde sea facil borrar o editar
+que el marcador funcione.
+mejorar estilo de la barra lateral.
+checar que categorias no se desborde ni se haga muy pequeño
+poner seguridad a mi base de datos.
+que no todo el mundo pueda modificar mi base de datos.
+que cuando escojas categoria en el selection se ponga en el campo en blanco.
+que los botones cambien de colo cuando el mouse esta ahi,
+que cuando entras ya tenga una categoria seleccionada y no tengas que seleccionar tu asi como asi.
+
+
+
