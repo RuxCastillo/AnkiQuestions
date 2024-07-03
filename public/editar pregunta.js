@@ -74,3 +74,16 @@ function borrarCamposCrear() {
     document.querySelector(".crearNuevaCategoria").value = ""
 }
 
+const selectCrear = document.querySelector(".crearCategoriasYaExistentes").addEventListener("change", crearPonerSelect);
+
+function crearPonerSelect() {
+    let actual = document.querySelector(".crearCategoriasYaExistentes").value;
+    document.querySelector(".crearNuevaCategoria").value = actual;
+}
+
+const selectEdit = document.querySelector(".editarCategoriaYaExistente").addEventListener("change", editarPonerSelect);
+
+function editarPonerSelect() {
+    let actualedit = document.querySelector(".editarCategoriaYaExistente").value;
+    document.querySelector(".editarNuevaCategoria").value = actualedit;
+}
