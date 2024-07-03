@@ -18,6 +18,6 @@ que no todo el mundo pueda modificar mi base de datos.
 que cuando escojas categoria en el selection se ponga en el campo en blanco.
 que los botones cambien de colo cuando el mouse esta ahi,
 que cuando entras ya tenga una categoria seleccionada y no tengas que seleccionar tu asi como asi.
-
+d
 
 
