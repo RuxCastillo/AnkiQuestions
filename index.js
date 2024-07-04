@@ -78,6 +78,7 @@ app.post("/agregarPregunta", async (req, res) => {
     const result = await db.query(query, [pregunta, respuesta, categoria]) 
 
        console.log(result.rows[0])
+       res.render("editar pregunta", {home: todasCategorias});
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
