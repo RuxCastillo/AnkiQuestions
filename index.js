@@ -30,32 +30,15 @@ const db = new pg.Client({
 
 db.connect();
 
-let todoDataBase;
-    db.query("SELECT * FROM todaslaspreguntas", (err, res) => {
-        if(err) {
-            console.error("Error executing query para llenar todoDataBase variable", err.stack);
-        } else {
-            todoDataBase = res.rows;
-        }
-    })
-
-let todasCategorias;
-    db.query("SELECT DISTINCT categoria FROM todaslaspreguntas", (err, res) => {
-        if(err) {
-            console.error("Error executing query todasCategorias llenando variable", err.stack);
-        } else {
-            todasCategorias = res.rows;
-        }
-    })
-
-
 app.get("/", (req, res) => {
     res.render("landing page")
 })
 
-app.get("/app", (req, res) => {
+app.get("/app", async (req, res) => {
     try {
-        res.render("laApp", {home: todasCategorias});
+        const query = `SELECT DISTINCT categoria FROM todaslaspreguntas;`
+        const result = await db.query(query)
+        res.render("laApp", {home: result.rows});
     } catch (error) {
         res.status(500).json({ message: "Error fetching home", error});
     }
@@ -94,16 +77,17 @@ app.post("/agregarPregunta", async (req, res) => {
     const query = `INSERT INTO todaslaspreguntas (preguntas, respuestas, categoria) VALUES ($1, $2, $3);`
     const result = await db.query(query, [pregunta, respuesta, categoria]) 
 
-        res.render("editar pregunta", {home: todasCategorias});
-/*        console.log(result.rows[0]) */
+       console.log(result.rows[0])
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
 })
 
-app.get("/crearoeditar", (req, res) => {
+app.get("/crearoeditar", async (req, res) => {
     try {
-        res.render("editar pregunta", {home: todasCategorias});
+        const query = `SELECT DISTINCT categoria FROM todaslaspreguntas;`
+        const result = await db.query(query)
+        res.render("editar pregunta", {home: result.rows});
     } catch (error) {
         res.status(500).json({ message: "Error fetching home para crear o editar pregunta", error});
     }
@@ -133,7 +117,7 @@ app.post("/updatepregunta", async (req, res) => {
     let categoria = req.body.categoriaeditar;
     let id = req.body.numId;
     if(!lainfonueva) {
-        return res.status(400).send("falta el parametro de la infor nueva para editar la pregunta")
+        return res.status(400).send("falta el parametro de la info nueva para editar la pregunta")
     }
 
     try {
