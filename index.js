@@ -78,7 +78,7 @@ app.post("/agregarPregunta", async (req, res) => {
     const result = await db.query(query, [pregunta, respuesta, categoria]) 
 
        console.log(result.rows[0])
-       res.render("editar pregunta", {home: todasCategorias});
+       res.redirect("/crearoeditar");
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
@@ -129,7 +129,7 @@ app.post("/updatepregunta", async (req, res) => {
             return res.status(404).send("Pregunta no encontrada editandopregunta api");
         }
 
-        res.render("editar pregunta", {home: todasCategorias});
+       res.redirect("/crearoeditar");
 /*         console.log(result.rows[0]) */
         //res.json(result.rows[0]);
     } catch (err) {
