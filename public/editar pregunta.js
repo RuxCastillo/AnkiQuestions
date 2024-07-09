@@ -72,18 +72,66 @@ document.querySelector(".solo25").style.display = "none";
 document.querySelector(".solo50").style.display = "none";
 
 function lasCategoriasSelect() {
-
-    console.log(lasCategoriasVariable)
-
     let saveSelectHTML = "";
     for(let variable of lasCategoriasVariable) {
         saveSelectHTML += `<option value='${variable.categoria}'>${variable.categoria}</option>`
     }
     const crearSelect = document.querySelector(".crearCategoriasYaExistentes").innerHTML = saveSelectHTML;
     const editarSelect = document.querySelector(".editarCategoriaYaExistente").innerHTML = saveSelectHTML;
-
 }
 
 setTimeout(lasCategoriasSelect, 2000)
 
-//cambiando mucho editar preguntas haber si se refleja el cambio en vercel
+const formcreate = document.querySelector("#crearForm").addEventListener("submit", function(e) {
+    e.preventDefault()
+});
+const form = document.querySelector("#editForm").addEventListener("submit", function(e) {
+    e.preventDefault()
+});
+
+function updateAQuestion() {
+    const objetoAEnviar = {
+        preguntaseditar: document.querySelector("#lapregunta").value,
+        respuestaeditar: document.querySelector(".editarRespuesta").value,
+        categoriaeditar: document.querySelector(".editarNuevaCategoria").value,
+        numId: document.querySelector(".editarNumId").value,
+    }
+    fetch("/updatepregunta", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(objetoAEnviar)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.respuesta)
+        borrarCamposEditar()
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    })
+}
+
+function crearQuestion() {
+    const preguntaCrear = {
+        preguntacrear: document.querySelector(".crearPregunta").value,
+        respuestacrear: document.querySelector(".crearRespuesta").value,
+        categoriacrear: document.querySelector(".crearNuevaCategoria").value
+    }
+    fetch("/agregarPregunta", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(preguntaCrear)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.respuesta)
+        borrarCamposCrear()
+    })
+    .catch((error) => {
+        console.error("Error:", error)
+    })
+}

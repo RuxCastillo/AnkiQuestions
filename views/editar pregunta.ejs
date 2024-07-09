@@ -23,22 +23,22 @@
                         <div class="segundoT"><h2>Editar</h2></div>
                     </div>
 
-                    <form method="POST" action="/agregarPregunta" class="crear" id="crearForm">
+                    <form class="crear" id="crearForm">
                         <textarea name="preguntacrear" class="crearPregunta" required></textarea>
                         <textarea name="respuestacrear" class="crearRespuesta" required></textarea>
                         <select class="crearCategoriasYaExistentes"></select>
                         <input name="categoriacrear" type="text" class="crearNuevaCategoria" required/>
-                        <button type="submit" class="crearsubmit">Crear</button>
+                        <button type="submit" class="crearsubmit" onclick="crearQuestion()">Crear</button>
                     </form>
 
-                    <form method="POST" action="/updatepregunta" class="editar" id="editForm">
+                    <form class="editar" id="editForm">
                         <input type="number" class="editarNumId" name="numId" required/>
                         <button type="button" class="editarBuscarId">Buscar</button>
                         <textarea type="text" name="preguntaseditar" id="lapregunta" class="editarPregunta" required></textarea>
                         <textarea type="text" name="respuestaeditar" class="editarRespuesta" required></textarea>
                         <select class="editarCategoriaYaExistente"></select>
                         <input type="text" name="categoriaeditar" class="editarNuevaCategoria" required />
-                        <button type="submit" class="editarsubmit">Editar</button>
+                        <button type="submit" class="editarsubmit" onclick="updateAQuestion()">Editar</button>
                     </form>
 
                 </div>

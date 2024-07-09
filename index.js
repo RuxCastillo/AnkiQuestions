@@ -65,7 +65,7 @@ app.post("/agregarPregunta", async (req, res) => {
     try {
     const query = `INSERT INTO todaslaspreguntas (preguntas, respuestas, categoria) VALUES ($1, $2, $3);`
     const result = await db.query(query, [preguntacrear, respuestacrear, categoriacrear]) 
-    res.redirect("/crearoeditar");
+    res.status(200).send({respuesta: "Pregunta creada en la base de datos."})
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
@@ -91,25 +91,18 @@ app.get("/obteniendoinfoporidparaeditar", async (req, res) => {
 
 app.post("/updatepregunta", async (req, res) => {
     const lainfonueva = req.body;
-    let pregunta = req.body.preguntaseditar
-    let respuesta = req.body.respuestaeditar;
-    let categoria = req.body.categoriaeditar;
-    let id = req.body.numId;
+    console.log(lainfonueva)
     if(!lainfonueva) {
         return res.status(400).send("falta el parametro de la info nueva para editar la pregunta")
     }
-
+    const { preguntaseditar, respuestaeditar, categoriaeditar, numId } = lainfonueva;
     try {
         const query = `UPDATE todaslaspreguntas SET preguntas = $1, respuestas = $2, categoria = $3 WHERE id = $4 RETURNING *`
-        const result = await db.query(query, [pregunta, respuesta, categoria, id])
-
+        const result = await db.query(query, [preguntaseditar, respuestaeditar, categoriaeditar, numId])
         if(result.rows.length === 0) {
             return res.status(404).send("Pregunta no encontrada editandopregunta api");
         }
-
-       res.redirect("/crearoeditar");
-/*         console.log(result.rows[0]) */
-        //res.json(result.rows[0]);
+        res.status(200).send({respuesta: "Pregunta actualizada en la base de datos."});
     } catch (err) {
         res.status(500).send("Error interno al editar la pregunta")
     }
