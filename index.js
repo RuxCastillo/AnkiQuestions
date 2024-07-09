@@ -58,19 +58,14 @@ app.get("/obteniendoPregunta", async (req, res) => {
 
 app.post("/agregarPregunta", async (req, res) => {
     let todo = req.body;
-    let pregunta = req.body.preguntacrear;
-    let respuesta = req.body.respuestacrear;
-    let categoria = req.body.categoriacrear;
     if(!todo) {
         return res.status(400).send("Falta el parametro para agregar pregunta nueva");
     }
-
+    const {preguntacrear, respuestacrear, categoriacrear} = req.body 
     try {
     const query = `INSERT INTO todaslaspreguntas (preguntas, respuestas, categoria) VALUES ($1, $2, $3);`
-    const result = await db.query(query, [pregunta, respuesta, categoria]) 
-
-       console.log(result.rows[0])
-       res.redirect("/crearoeditar");
+    const result = await db.query(query, [preguntacrear, respuestacrear, categoriacrear]) 
+    res.redirect("/crearoeditar");
     } catch (err) {
         return res.status(500).send("Error al consultar la base de datos para agregar pregunta nueva")
     }
