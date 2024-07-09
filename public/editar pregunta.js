@@ -85,3 +85,5 @@ function lasCategoriasSelect() {
 }
 
 setTimeout(lasCategoriasSelect, 2000)
+
+//cambiando mucho editar preguntas haber si se refleja el cambio en vercel
