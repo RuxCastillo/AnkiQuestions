@@ -8,7 +8,6 @@ const buscarIdButton = document.querySelector(".editarBuscarId").addEventListene
 
 function peticionBuscarPregunta() {
     const idABuscar = document.querySelector(".editarNumId").value;
-
     fetch(`/obteniendoinfoporidparaeditar?id=${idABuscar}`)
         .then(response => {
             if (!response.ok) {
@@ -22,31 +21,23 @@ function peticionBuscarPregunta() {
         .catch(error => {
             console.error("llego al catch de peticionBuscarPregunta", error);
         })
-
 }
 
 function poniendoTodoTextoAEditar(respuestaServer) {
-    console.log(respuestaServer)
     document.querySelector(".editarPregunta").value = respuestaServer[0].preguntas
     document.querySelector(".editarRespuesta").value = respuestaServer[0].respuestas
     document.querySelector(".editarCategoriaYaExistente").value = respuestaServer[0].categoria
     document.querySelector(".editarNuevaCategoria").value = respuestaServer[0].categoria
 }
 
-const submitEditarButton = document.querySelector(".segundoT").addEventListener("click", borrarCamposEditar);
-
 function borrarCamposEditar() {
-    console.log("le diste click a editar")
     document.querySelector(".editarNumId").value = "";
     document.querySelector(".editarPregunta").value = "";
     document.querySelector(".editarRespuesta").value = "";
     document.querySelector(".editarNuevaCategoria").value = "";
 }
 
-const submitCrearButton = document.querySelector(".primerT").addEventListener("click", borrarCamposCrear);
-
 function borrarCamposCrear() {
-    console.log("le diste click a crear")
     document.querySelector(".crearPregunta").value = ""    
     document.querySelector(".crearRespuesta").value = ""
     document.querySelector(".crearNuevaCategoria").value = ""

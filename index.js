@@ -91,7 +91,6 @@ app.get("/obteniendoinfoporidparaeditar", async (req, res) => {
 
 app.post("/updatepregunta", async (req, res) => {
     const lainfonueva = req.body;
-    console.log(lainfonueva)
     if(!lainfonueva) {
         return res.status(400).send("falta el parametro de la info nueva para editar la pregunta")
     }

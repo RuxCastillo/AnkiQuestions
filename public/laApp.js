@@ -5,11 +5,10 @@ function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria
 }
 
-    document.querySelector(".nuevaPregunta button").addEventListener("click", llamandoUnaPregunta) 
+document.querySelector(".nuevaPregunta button").addEventListener("click", llamandoUnaPregunta) 
 
 function llamandoUnaPregunta() {
     let nombreCategoriaAEnviar = document.querySelector(".categoriaActual h2").innerText
-
     fetch(`/obteniendoPregunta?categoria=${nombreCategoriaAEnviar}`)
         .then(response => {
             if (!response.ok) {
@@ -45,8 +44,6 @@ let contestadasMal = 0;
 document.querySelector(".solo10").style.backgroundColor = "yellow";
 
 function cambiandoMetaPreguntasConCuadrito(num) {
-    console.log(num)
-    console.log(document.querySelector(`.solo${num}`))
     document.querySelector(`.solo${metaPreguntas}`).style.backgroundColor = "white";
     contestadasMal = 0;
     document.querySelector(".contadorMal").innerText = 0;
@@ -57,12 +54,11 @@ function cambiandoMetaPreguntasConCuadrito(num) {
 }
 
 function agregandoPuntos(resultado) {
-    console.log(contestadasBien)
     let puntos = (resultado === "Bien")? contestadasBien++ : contestadasMal++
-    console.log(contestadasBien)
     document.querySelector(".contador" + resultado).innerText = puntos+1;
     document.querySelector(".respuestaUsuario textarea").value = "";
     checarMeta()
+    llamandoUnaPregunta();
 }
 
 function checarMeta() {
