@@ -1,5 +1,7 @@
-const serverData = document.querySelector("#serverData").innerText;
-let otra = JSON.parse(serverData)
+
+
+
+/* let otra = JSON.parse(serverData)
 
 const categorias = document.querySelector(".categorias");
 
@@ -8,7 +10,9 @@ for(let variable of otra) {
     save += `<div class="cuadroCategoria" onclick="seleccionandoCategoria('${variable.categoria}')">${variable.categoria}</div>`
 }
 
-categorias.innerHTML += save;
+categorias.innerHTML += save; */
+
+lasCategorias()
 
 function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria
@@ -16,52 +20,37 @@ function seleccionandoCategoria(clickCategoria) {
 
     document.querySelector(".nuevaPregunta button").addEventListener("click", llamandoUnaPregunta) 
 
-async function llamandoUnaPregunta() {
-    console.log("llamandounapreguntafunction")
-        let nombreCategoriaAEnviar = document.querySelector(".categoriaActual h2").innerText
-        let soloUnaPregunta;
+function llamandoUnaPregunta() {
+    let nombreCategoriaAEnviar = document.querySelector(".categoriaActual h2").innerText
 
-        const url = `/obteniendoPregunta?categoria=${nombreCategoriaAEnviar}`
-
-        try {
-            const response = await fetch(url);
+    fetch(`/obteniendoPregunta?categoria=${nombreCategoriaAEnviar}`)
+        .then(response => {
             if (!response.ok) {
-                throw new Error(`Error llamandounapreguntafunction: ${response.statusText}`)
+                throw new Error("Error: llamandoUnaPregunta" + response.statusText)
             }
-            let data = await response.json();
-            soloUnaPregunta = data;
-            paseleSrPregunta(soloUnaPregunta)
-        } catch(error) {
-            console.error("Error: unapregunta", error)
-        }
+            return response.json();
+        })
+        .then(data => {
+            paseleSrPregunta(data)
+        })
+        .catch(error => {
+            console.error("Error: unapreguntacatch", error)
+        })
 }
 
 function paseleSrPregunta(todaLaCategoria) {
-    console.log(todaLaCategoria)
     document.querySelector(".textoPregunta").innerText = todaLaCategoria.preguntas
     document.querySelector(".respuestaCorrecta textarea").value = todaLaCategoria.respuestas
     document.querySelector(".respuestaCorrecta textarea").style.display = "none"
     document.querySelector(".respuestas button").style.display = "block"
     document.querySelector(".respuestas button").addEventListener("click", revelarRespuesta)
     document.querySelector(".preguntaInfo .numeroId p").innerText = todaLaCategoria.id
-
 }
 
 function revelarRespuesta() {
     document.querySelector(".respuestaCorrecta textarea").style.display = "block"
     document.querySelector(".respuestas button").style.display = "none"
 }
-
-function clickABienoMal() {
-    document.querySelector("")
-}
-
-// cada que le de a bien o mal tiene que aumentar en uno el contador correspondiente.
-// tambien tiene que estar al pendiente a la variable elegida de cuantas preguntas queremos.
-// si se escoge otro numero del numero de preguntas se tiene que reiniciar el marcador
-// cuando el marcador llegue a la meta elegida tiene que salir un alert diciendote que ganaste o perdites y ahi reiniciamos el marcador.
-// el marcador elegido lo quiero que cambie de background a amarillo ara mostrar cual es el correcto.
-//display none de los cuadritos en crearoeditar page
 
 let metaPreguntas = 10;
 let contestadasBien = 0;
@@ -85,6 +74,7 @@ function agregandoPuntos(resultado) {
     let puntos = (resultado === "Bien")? contestadasBien++ : contestadasMal++
     console.log(contestadasBien)
     document.querySelector(".contador" + resultado).innerText = puntos+1;
+    document.querySelector(".respuestaUsuario textarea").value = "";
     checarMeta()
 }
 
