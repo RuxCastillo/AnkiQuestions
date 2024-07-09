@@ -1,4 +1,4 @@
-lasCategorias();
+setTimeout(lasCategorias(), 1000)
 
 function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria
@@ -84,4 +84,4 @@ function lasCategoriasSelect() {
 
 }
 
-setTimeout(lasCategoriasSelect, 1000)
+setTimeout(lasCategoriasSelect, 2000)

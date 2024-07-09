@@ -1,5 +1,5 @@
 
-lasCategorias()
+setTimeout(lasCategorias(), 1000)
 
 function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria
