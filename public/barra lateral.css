@@ -21,6 +21,7 @@
     align-items: center;
     font-weight: bold;
     font-family: "Roca one", sans-serif;
+    border-radius: 9px;
 }
 
 #barraLateral .configuracionMarcador {
