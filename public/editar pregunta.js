@@ -1,24 +1,4 @@
-const serverData = document.querySelector("#serverData").innerText;
-let otra = JSON.parse(serverData)
-
-
-let saveBarraLateral = "";
-for(let variable of otra) {
-    saveBarraLateral += `<div class="cuadroCategoria" onclick="seleccionandoCategoria('${variable.categoria}')">${variable.categoria}</div>`
-}
-const categorias = document.querySelector(".categorias");
-categorias.innerHTML += saveBarraLateral;
-
-let saveSelectHTML = "";
-for(let variable of otra) {
-    saveSelectHTML += `<option value='${variable.categoria}'>${variable.categoria}</option>`
-}
-const crearSelect = document.querySelector(".crearCategoriasYaExistentes").innerHTML = saveSelectHTML;
-const editarSelect = document.querySelector(".editarCategoriaYaExistente").innerHTML = saveSelectHTML;
-
-
-
-
+lasCategorias();
 
 function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria
@@ -26,24 +6,22 @@ function seleccionandoCategoria(clickCategoria) {
 
 const buscarIdButton = document.querySelector(".editarBuscarId").addEventListener("click", peticionBuscarPregunta);
 
-async function peticionBuscarPregunta() {
+function peticionBuscarPregunta() {
     const idABuscar = document.querySelector(".editarNumId").value;
-    console.log(idABuscar)
-    let laRespuesta;
 
-    const url = `/obteniendoinfoporidparaeditar?id=${idABuscar}`
-
-    try {
-        const response = await fetch(url);
-        if(!response.ok) {
-            throw new Error(`Error peticionBuscarPregunta frontend: ${response.statusText}`)
-        }
-        let data = await response.json();
-        laRespuesta = data;
-        poniendoTodoTextoAEditar(laRespuesta)
-    } catch(error) {
-        console.error("Error: peticion buscar pregunta frontend", error)
-    }
+    fetch(`/obteniendoinfoporidparaeditar?id=${idABuscar}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("primer then en peticionBuscarPregunta" + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            poniendoTodoTextoAEditar(data)
+        })
+        .catch(error => {
+            console.error("llego al catch de peticionBuscarPregunta", error);
+        })
 
 }
 
@@ -92,3 +70,18 @@ document.querySelector(".solo1").style.display = "none";
 document.querySelector(".solo10").style.display = "none";
 document.querySelector(".solo25").style.display = "none";
 document.querySelector(".solo50").style.display = "none";
+
+function lasCategoriasSelect() {
+
+    console.log(lasCategoriasVariable)
+
+    let saveSelectHTML = "";
+    for(let variable of lasCategoriasVariable) {
+        saveSelectHTML += `<option value='${variable.categoria}'>${variable.categoria}</option>`
+    }
+    const crearSelect = document.querySelector(".crearCategoriasYaExistentes").innerHTML = saveSelectHTML;
+    const editarSelect = document.querySelector(".editarCategoriaYaExistente").innerHTML = saveSelectHTML;
+
+}
+
+setTimeout(lasCategoriasSelect, 1000)
