@@ -1,18 +1,4 @@
-
-
-
-/* let otra = JSON.parse(serverData)
-
-const categorias = document.querySelector(".categorias");
-
-let save = "";
-for(let variable of otra) {
-    save += `<div class="cuadroCategoria" onclick="seleccionandoCategoria('${variable.categoria}')">${variable.categoria}</div>`
-}
-
-categorias.innerHTML += save; */
-
-lasCategorias()
+setTimeout(lasCategorias, 1000)
 
 function seleccionandoCategoria(clickCategoria) {
     document.querySelector(".categoriaActual h2").innerText = clickCategoria

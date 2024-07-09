@@ -1,4 +1,4 @@
-let lasCategoriasVariable = "hola";
+let lasCategoriasVariable;
 
 function lasCategorias() {
 

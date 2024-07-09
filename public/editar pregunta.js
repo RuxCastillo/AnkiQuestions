@@ -84,4 +84,4 @@ function lasCategoriasSelect() {
 
 }
 
-setTimeout(lasCategoriasSelect, 1000)
+setTimeout(lasCategoriasSelect, 2000)
