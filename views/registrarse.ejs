@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registrarse.css" />
+    <title>AnkiQuestions Registrarse</title>
+</head>
+<body>
+    <section>
+        <h1>AnkiQuestions</h1>
+        <p class="Bienvenida">¿Estas listo para mejorar en tu escuela?, ¿para desempeñarte mejor en tu trabajo?, no esperes mas y completa la siguiente informacion:</p>
+        <form id="registro">
+            <label for="correo">Ingresa tu correo electronico:</label>
+            <input type="email" id="correo" name="email" placeholder="Ingresa tu correo aqui..." />
+            <label for="alias">Ingresa tu nombre de usuario:</label>
+            <input type="text" id="alias" placeholder="Ingresa tu nombre de usuario aqui..." />
+            <label for="contraseña">Ingresa tu contraseña:</label>
+            <input type="password" id="contraseña" placeholder="Ingresa tu contraseña aqui..." />
+            <label for="contraseña-repetir">Ingresa tu contraseña:</label>
+            <input type="password" id="contraseña-repetir" placeholder="Confirma tu contraseña aqui..." />
+            <button>Registrarse</button>
+        </form>
+        <div class="registrate-con-apps">
+            <p>o</p>
+            <button>Registrate con Google</button>
+            <button>Registrate con GitHub</button>
+        </div>
+        <div class="inicia-sesion">
+            <p>Ya estas registrado con nosotros, entonces <a href="/iniciarsesion">Inicia Sesion.</a></p>
+        </div>
+    </section>
+    <script src="./registrarse.js"></script>
+</body>
+</html>

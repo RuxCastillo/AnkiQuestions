@@ -117,6 +117,14 @@ app.get("/solicitandocategorias", async (req, res) => {
     }
 })
 
+app.get("/registrarse", (req, res) => {
+    res.render("registrarse")
+})
+
+app.get("/iniciarsesion", (req, res) => {
+    res.render("iniciarsesion")
+})
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 })
