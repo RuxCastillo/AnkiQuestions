@@ -11,10 +11,10 @@ const app = express();
 const port = process.env.PORT || 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "views")));
+app.use(express.static(path.join(__dirname, "../views")));
 app.set("view engine", "ejs");
 
 const db = new pg.Client({
