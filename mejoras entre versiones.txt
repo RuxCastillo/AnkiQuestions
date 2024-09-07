@@ -22,4 +22,29 @@ que los botones cambien de color cuando el mouse esta ahi,
 que cuando entras ya tenga una categoria seleccionada y no tengas que seleccionar tu asi como asi.
 d
 
+el quitar los dos textareas y poner solo la pregunta y un boton y que salga la respuesta un cuadro detras del boton se agrande y ahi aparesca la respuesta de la pregunta
+añaidr 2 botones para que sea medio bien y medio mal agregado y estos aumenten .5 en el score
+que cuando crees pregutas o edites te aparesca un mensajito en lugar de que sea un alert.
+crear una base de datos con 200 preguntas a lomejor para cuando se le de ver proyecto que las puedan modificar los que entren y usar todas lsa funciones.
+poner algun metodo de autorización para poder entrar a la versión de administrador
+ponerle token a la version de admiistrador para no tenerme que logear cada vez.
+mejorar la estructura de los archivos y asi para que se vea mejor.
+hacer la version de celular en landing page y en todo lo demas
+mejorar los colores o el como se ve (diseño) de la app
+no se si cambiar la barra la teral por una barra de arriba.
+que se pueda esconder la barra la teral.
+que sea responsivo todo.
+que utilice la metodologia de BEM en el css
+refactorizar el css
+crear una clase con todas las querys que se conectan a la base de datos.
+crear un archivo para cada ruta de mi app.
+entender el porque funciona solo asi mi app en cuanto a filee and path name y en cuanto a porque tiene que estar en una carpeta llamada api.
+modificar la base de datos para que sean varias tablas conectadas y normalizada y asi.
+poner busqueda de preguntas con prediccion y asi.
+que salga las ultimas preguntas que has añadido en una lista, asi como listas de preguntas de cada categoria y asi
+separar el editar y crear preguntas paginas.
+el quitar lo mas que pueda de paquetes de node para que la app sea lo mas vanilla posible tanto en el back como en el front.
+el usar diferentes maneras de fetch para que se vea que se usar todas.
+
+
 
