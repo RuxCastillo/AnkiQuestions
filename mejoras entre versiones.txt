@@ -7,7 +7,8 @@ la entrada a app y crearoeditar ya tiene su propia query a la base de datos para
 las categorias no salen siempre y hay que refrescar la pagina algunas veces.
 
 
-
+el objetivo que quiero alcanzar lo mas rapido posible es el poderla poner en la seccion de proyectos y que sea algo que se vea bien y bonito para poder obtener trabajo
+asi que mis esfuerzos estaran en aquellos problemas que ayuden a poderla poner en mi pagina de portafolio
 
 mejoras que se le puede hacer a la app.
 boton de borrar pregunta
