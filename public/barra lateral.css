@@ -107,6 +107,6 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	background-color: #f66b1d;
+	background-image: linear-gradient(to bottom right, #f66b1d, #f17e3c);
 	border: 2px solid gray;
 }

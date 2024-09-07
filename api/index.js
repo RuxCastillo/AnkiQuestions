@@ -47,11 +47,17 @@ app.get('/obteniendoPregunta', async (req, res) => {
 				.status(400)
 				.send('Falta el parametro de la categoria para enviarla');
 		}
-		const query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas WHERE categoria = $1 ORDER BY RANDOM() LIMIT 1;`;
-		let result = await db.query(query, [buscandoCategoria]);
-		let response = result.rows[0];
-		console.log(response);
-		res.send(response);
+		if (buscandoCategoria === 'Categoria Actual') {
+			let query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas ORDER BY RANDOM() LIMIT 1;`;
+			let result = await db.query(query, []);
+			let response = result.rows[0];
+			res.send(response);
+		} else {
+			let query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas WHERE categoria = $1 ORDER BY RANDOM() LIMIT 1;`;
+			let result = await db.query(query, [buscandoCategoria]);
+			let response = result.rows[0];
+			res.send(response);
+		}
 	} catch (error) {
 		res
 			.status(500)

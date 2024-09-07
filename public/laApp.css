@@ -1,319 +1,299 @@
-
-
-
-
-
-
 .contador .contadorBien {
-    width: 40%;
-    height: 30%;
-    color: #F66B1D;
-    border: 4px solid green;
-    background-color: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    color: black;
-    font-size: 2rem;
-    font-family: "Roca one", serif;
+	width: 40%;
+	height: 30%;
+	color: #f66b1d;
+	border: 4px solid green;
+	background-color: green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	color: black;
+	font-size: 2rem;
+	font-family: 'Roca one', serif;
 }
 
 .contador .raya {
-    width: 10px;
-    height: 5px;
-    background-color: black;
+	width: 10px;
+	height: 5px;
+	background-color: black;
 }
 
 .contador .contadorMal {
-    width: 40%;
-    height: 30%;
-    border: 4px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background-color: red;
-    color: black;
-    font-size: 2rem;
-    font-family: "Roca one", serif;
+	width: 40%;
+	height: 30%;
+	border: 4px solid red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	background-color: red;
+	color: black;
+	font-size: 2rem;
+	font-family: 'Roca one', serif;
 }
 
 .bienContador .contador {
-    height: 100%;
-    width: 100%;
-    grid-column: 2/3;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+	height: 100%;
+	width: 100%;
+	grid-column: 2/3;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 .bien button {
-    width: 43%;
-    height: 25%;
-    border-radius: 10px;
-    border: 4px solid green;
-    background-color: green;
-    font-size: 1.2rem;
-    color: white;
-    font-weight: 600;
+	width: 43%;
+	height: 25%;
+	border-radius: 10px;
+	border: 4px solid green;
+	background-color: green;
+	font-size: 1.2rem;
+	color: white;
+	font-weight: 600;
 }
 
 .bienContador .bien {
-    height: 100%;
-    width: 100%;
-    grid-column: 1/2;
-    display: flex;
-    justify-content: start;
-    padding-left: 2%;
+	height: 100%;
+	width: 100%;
+	grid-column: 1/2;
+	display: flex;
+	justify-content: start;
+	padding-left: 2%;
 }
 
 .botones .bienContador {
-    height: 100%;
-    width: 100%;
-    grid-column: 2/3;
-    display: grid;
-    grid-template-columns: 3fr 2.5fr;
+	height: 100%;
+	width: 100%;
+	grid-column: 2/3;
+	display: grid;
+	grid-template-columns: 3fr 2.5fr;
 }
 
 .mal button {
-    width: 35%;
-    height: 25%;
-    border-radius: 10px;
-    border: 4px solid red;
-    background-color: red;
-    font-size: 1.2rem;
-    color: white;
-    font-weight: 600;
-
+	width: 35%;
+	height: 25%;
+	border-radius: 10px;
+	border: 4px solid red;
+	background-color: red;
+	font-size: 1.2rem;
+	color: white;
+	font-weight: 600;
 }
 
 .botonesMal .mal {
-    height: 100%;
-    width: 100%;
-    grid-column: 2/3;
-    display: flex;
-    justify-content: end;
-    padding-right: 2%;
+	height: 100%;
+	width: 100%;
+	grid-column: 2/3;
+	display: flex;
+	justify-content: end;
+	padding-right: 2%;
 }
 
 .divLosBotones .nuevaPregunta button {
-    border: 3px solid #F66B1D;
-    background-color: #F66B1D;
-    color: white;
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 600;
+	border: 3px solid #f66b1d;
+	background-color: #f66b1d;
+	color: white;
+	border-radius: 10px;
+	height: 100%;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 600;
 }
 
 .divLosBotones .otraPregunta button {
-    border: 3px solid #F66B1D;
-    background-color: #F66B1D;
-    color: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
+	border: 3px solid #f66b1d;
+	background-color: #f66b1d;
+	color: white;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-weight: 600;
 }
 
 .divLosBotones div {
-    width: 70%;
-    height: 50px;
+	width: 70%;
+	height: 50px;
 }
 
 .botonesMal .divLosBotones {
-    height: 100%;
-    width: 100%;
-    grid-column: 1/2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    
+	height: 100%;
+	width: 100%;
+	grid-column: 1/2;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .botones .botonesMal {
-    height: 100%;
-    width: 100%;
-    grid-column: 1/2;
-    display: grid;
-    grid-template-columns: 2fr 4fr;
+	height: 100%;
+	width: 100%;
+	grid-column: 1/2;
+	display: grid;
+	grid-template-columns: 2fr 4fr;
 }
 
 #app .botones {
-    display: grid;
-    height: 20%;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
-
+	display: grid;
+	height: 20%;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
 }
 
 .respuestas button {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    width: 30%;
-    height: 20%;
-    border-radius: 15px;
-    border: 4px solid white;
-    color: white;
-    font-size: 1.4rem;
-    background-color: #F66B1D;
-    font-weight: 600;
-    font-family: "Roca one", serif;
-    display: none;
+	grid-column: 2/3;
+	grid-row: 1/2;
+	width: 30%;
+	height: 20%;
+	border-radius: 15px;
+	border: 4px solid white;
+	color: white;
+	font-size: 1.4rem;
+	background-color: #f66b1d;
+	font-weight: 600;
+	font-family: 'Roca one', serif;
+	display: none;
 }
 
 .respuestaCorrecta textarea {
-    width: 90%;
-    height: 80%;
-    border: 3px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: 1.4rem;
+	width: 90%;
+	height: 80%;
+	border: 3px solid black;
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.4rem;
 }
 
 .respuestas .respuestaCorrecta {
-    justify-content: center;
-    align-items: center;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column: 2/3;
+	grid-row: 1/2;
+	width: 100%;
+	height: 100%;
+	display: flex;
 }
 
 .respuestaUsuario textarea {
-    width: 90%;
-    height: 80%;
-    border: 3px solid black;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: 1.4rem;
+	width: 90%;
+	height: 80%;
+	border: 3px solid black;
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.4rem;
 }
 
 .respuestas .respuestaUsuario {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	grid-column: 1/2;
+	grid-row: 1/2;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #app .respuestas {
-    height: 60%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
+	height: 60%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	justify-items: center;
 }
 
 .pregunta .textoPregunta {
-    font-size: 2rem;
-    display: table-cell;
-    vertical-align: middle;
-    width: 100%;
-    height: 100%;
-    line-height: 2.2rem;
-    text-wrap: wrap;
-    text-align: center;
-    font-family: serif;
+	font-size: 2rem;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	line-height: 2.2rem;
+	text-wrap: wrap;
+	text-align: center;
+	font-family: serif;
 }
 
 .preguntaInfo .numeroId {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    width: 100%;
-    height: 18%;
-    background-color: #F66B1D;
-    position: relative;
-    right: 20px;
-    z-index: 3;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1rem;
-    justify-self: end;
-    align-self: end;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	grid-column: 2/3;
+	grid-row: 2/3;
+	width: 100%;
+	height: 18%;
+	background-color: #f66b1d;
+	position: relative;
+	right: 20px;
+	z-index: 3;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 1rem;
+	justify-self: end;
+	align-self: end;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .preguntaInfo .pregunta {
-    grid-column: 1/3;
-    display: table;
-    grid-row: 1/3;
-    width: 90%;
-    height: 80%;
-    margin: auto;
+	grid-column: 1/3;
+	display: table;
+	grid-row: 1/3;
+	width: 90%;
+	height: 80%;
+	margin: auto;
 }
 
 .preguntaInfo .info {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    border-radius: 50%;
-    position: relative;
-    right: 20px;
-    top: 5px;
-    border: 4px solid #F66B1D;
-    text-align: center;
-    color: #F66B1D;
-    font-size: 1.2rem;
+	grid-column: 2/3;
+	grid-row: 1/2;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	border-radius: 50%;
+	position: relative;
+	right: 20px;
+	top: 5px;
+	border: 4px solid #f66b1d;
+	text-align: center;
+	color: #f66b1d;
+	font-size: 1.2rem;
 }
 
 #app .preguntaInfo {
-    height: 20%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 30px;
-    grid-template-rows: 30px 1fr;
+	height: 20%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 30px;
+	grid-template-rows: 30px 1fr;
 }
 
 #app {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #E1EFFF;
-
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(to bottom left, #e1efff, #f0f3f7);
+	/*     background-color: #E1EFFF; */
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    min-width: 1000px;
-    min-height: 600px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	min-width: 1000px;
+	min-height: 600px;
 }
 
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 @font-face {
-    font-family: "Roca one";
-    src: url("./Roca\ Regular.ttf") format("truetype");
+	font-family: 'Roca one';
+	src: url('./Roca\ Regular.ttf') format('truetype');
 }
-
-
-
-
-
-
-
-
-
-
-
