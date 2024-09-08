@@ -16,7 +16,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../views')));
-app.set('view engine', 'ejs');
 
 const contraseña = process.env.CONTRA;
 
@@ -35,7 +34,7 @@ const db = new pg.Client({
 db.connect();
 
 app.get('/', (req, res) => {
-	res.render('landing page');
+	res.render('landing page.html');
 });
 
 app.get('/app', (req, res) => {
