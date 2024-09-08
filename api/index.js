@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import env from 'dotenv';
 import pg from 'pg';
+import postgreRoutes from './postgresql';
 
 env.config();
 
@@ -16,6 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../views')));
 app.set('view engine', 'ejs');
+
+const contraseña = process.env.CONTRA;
 
 const db = new pg.Client({
 	user: process.env.POSTGRES_USER,
@@ -48,13 +51,13 @@ app.get('/obteniendoPregunta', async (req, res) => {
 				.send('Falta el parametro de la categoria para enviarla');
 		}
 		if (buscandoCategoria === 'Categoria Actual') {
-			let query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas ORDER BY RANDOM() LIMIT 1;`;
-			let result = await db.query(query, []);
+			let result = await db.query(postgreRoutes.unaPreguntaRandomTodo, []);
 			let response = result.rows[0];
 			res.send(response);
 		} else {
-			let query = `SELECT id, preguntas, respuestas FROM todaslaspreguntas WHERE categoria = $1 ORDER BY RANDOM() LIMIT 1;`;
-			let result = await db.query(query, [buscandoCategoria]);
+			let result = await db.query(postgreRoutes.unaPreguntaRandomCategoria, [
+				buscandoCategoria,
+			]);
 			let response = result.rows[0];
 			res.send(response);
 		}
@@ -78,8 +81,7 @@ app.post('/agregarPregunta', async (req, res) => {
 	}
 	const { preguntacrear, respuestacrear, categoriacrear } = req.body;
 	try {
-		const query = `INSERT INTO todaslaspreguntas (preguntas, respuestas, categoria) VALUES ($1, $2, $3);`;
-		const result = await db.query(query, [
+		const result = await db.query(postgreRoutes.crearPregunta, [
 			preguntacrear,
 			respuestacrear,
 			categoriacrear,
@@ -106,8 +108,9 @@ app.get('/obteniendoinfoporidparaeditar', async (req, res) => {
 			);
 	}
 	try {
-		const query = `SELECT preguntas, respuestas, categoria FROM todaslaspreguntas WHERE id = $1;`;
-		let result = await db.query(query, [elIdPreguntaAEditar]);
+		let result = await db.query(postgreRoutes.obtenerUnaPreguntaPorId, [
+			elIdPreguntaAEditar,
+		]);
 		res.send(result.rows);
 	} catch (err) {
 		res
@@ -133,8 +136,7 @@ app.post('/updatepregunta', async (req, res) => {
 	const { preguntaseditar, respuestaeditar, categoriaeditar, numId } =
 		lainfonueva;
 	try {
-		const query = `UPDATE todaslaspreguntas SET preguntas = $1, respuestas = $2, categoria = $3 WHERE id = $4 RETURNING *`;
-		const result = await db.query(query, [
+		const result = await db.query(postgreRoutes.editarUnaPregunta, [
 			preguntaseditar,
 			respuestaeditar,
 			categoriaeditar,
@@ -155,22 +157,13 @@ app.post('/updatepregunta', async (req, res) => {
 
 app.get('/solicitandocategorias', async (req, res) => {
 	try {
-		const query = `SELECT DISTINCT categoria FROM todaslaspreguntas;`;
-		const result = await db.query(query);
+		const result = await db.query(postgreRoutes.obtenerCategorias);
 		res.send(result.rows);
 	} catch (error) {
 		res
 			.status(500)
 			.json({ message: 'Error fetching las categorias antes era home', error });
 	}
-});
-
-app.get('/registrarse', (req, res) => {
-	res.render('registrarse');
-});
-
-app.get('/iniciarsesion', (req, res) => {
-	res.render('iniciarsesion');
 });
 
 app.listen(port, () => {
