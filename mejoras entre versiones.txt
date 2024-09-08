@@ -46,6 +46,9 @@ que salga las ultimas preguntas que has añadido en una lista, asi como listas d
 separar el editar y crear preguntas paginas.
 el quitar lo mas que pueda de paquetes de node para que la app sea lo mas vanilla posible tanto en el back como en el front.
 el usar diferentes maneras de fetch para que se vea que se usar todas.
-
+hacer test para probar la aplicación y asi tanto de back como de front.
+tener un deployment de ciertamanera el minimize archivos comprimirlos en una linea y todo esto para que la app este lista para estar en producción.
+arreglar el html a que sea un buen html con imagenes optimizadas y asi.
+se me esta ocurriendo usar html con la barra de tareas y que solo cambie el espacio de al lado con request y dom alomejor asi puedo probar algun patron de diseño, tipo react con el root.
 
 

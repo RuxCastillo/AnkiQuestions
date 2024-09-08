@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import env from 'dotenv';
 import pg from 'pg';
-import postgreRoutes from './postgresql';
+import postgreRoutes from './postgresql.js';
 
 env.config();
 
