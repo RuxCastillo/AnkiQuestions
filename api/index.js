@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import env from 'dotenv';
 import pg from 'pg';
-import postgreRoutes from './postgresql.js';
+import postgreRoutes from './postgresql';
 
 env.config();
 
@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../views')));
+app.set('view engine', 'ejs');
 
 const contraseña = process.env.CONTRA;
 
