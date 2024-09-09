@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import env from 'dotenv';
 import pg from 'pg';
-import postgreRoutes from './postgresql';
+import postgreRoutes from './postgresql.js';
 
 env.config();
 
@@ -15,8 +15,8 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../views')));
-app.set('view engine', 'ejs');
+//app.use(express.static(path.join(__dirname, '../views')));
+//app.set('view engine', 'html');
 
 const contraseña = process.env.CONTRA;
 
@@ -35,7 +35,9 @@ const db = new pg.Client({
 db.connect();
 
 app.get('/', (req, res) => {
-	res.render('landing page.html');
+	res.sendFile('landing page.html', {
+		root: './public',
+	});
 });
 
 app.get('/app', (req, res) => {
