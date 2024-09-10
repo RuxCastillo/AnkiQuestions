@@ -1,0 +1,216 @@
+.tercerP {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr 0.7fr;
+	grid-template-rows: 1fr;
+	padding: 3.5rem 5%;
+	margin-top: 5rem;
+}
+
+.tercerP .letras {
+	grid-column: 1/2;
+	grid-row: 1/2;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+}
+
+.letras .centerTitulo {
+	display: table;
+	width: 100%;
+	height: 100%;
+	grid-row: 1/2;
+}
+
+.letras h3 {
+	font-family: 'Roca one', serif;
+	display: table-cell;
+	font-size: 9rem;
+	font-weight: 100;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.letras p {
+	grid-row: 2/3;
+	font-size: 4.5rem;
+	font-family: sans-serif;
+	padding: 4% 5% 0% 15%;
+}
+
+.tercerP .estadistica {
+	grid-column: 2/3;
+	display: grid;
+	grid-template-rows: repeat(7, 1fr);
+	grid-template-columns: 30px 1fr 1fr 1fr 1fr;
+	width: 100%;
+	height: 100%;
+	grid-row: 1/2;
+}
+
+.num25 {
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+
+.num20 {
+	grid-column: 1/2;
+	grid-row: 2/3;
+}
+
+.num15 {
+	grid-column: 1/2;
+	grid-row: 3/4;
+}
+
+.num10 {
+	grid-column: 1/2;
+	grid-row: 4/5;
+}
+
+.num5 {
+	grid-column: 1/2;
+	grid-row: 5/6;
+}
+
+.num0 {
+	grid-column: 1/2;
+	grid-row: 6/7;
+}
+
+.lineabr {
+	border-bottom: 1px solid black;
+	grid-column: 2/-1;
+}
+
+.uno {
+	border-top: 1px solid black;
+	grid-row: 1/2;
+}
+
+.dos {
+	grid-row: 2/3;
+}
+
+.tres {
+	grid-row: 3/4;
+}
+
+.cuatro {
+	grid-row: 4/5;
+}
+
+.cinco {
+	grid-row: 5/6;
+}
+
+.seis {
+	grid-row: 6/7;
+}
+
+.barras {
+	width: 90%;
+	height: 100%;
+	background-color: purple;
+	justify-self: center;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.barra1 {
+	grid-column: 2/3;
+	grid-row: 5/7;
+}
+
+.barra2 {
+	grid-column: 3/4;
+	grid-row: 1/7;
+	margin: 0px 10px;
+}
+
+.barra3 {
+	grid-column: 4/5;
+	grid-row: 5/7;
+}
+
+.barra4 {
+	grid-column: 5/6;
+	grid-row: 1/7;
+}
+
+.textos {
+	font-size: 2rem;
+	font-family: sans-serif;
+	transform: rotate(-45deg) translate(-20px, 40px);
+	display: inline-block;
+	height: 60%;
+}
+
+.texto1 {
+	grid-column: 2/3;
+	grid-row: 7/8;
+}
+
+.texto2 {
+	grid-column: 3/4;
+	grid-row: 7/8;
+}
+
+.texto3 {
+	grid-column: 4/5;
+	grid-row: 7/8;
+}
+
+.texto4 {
+	grid-column: 5/6;
+	grid-row: 7/8;
+}
+
+.tercerP .persona {
+	grid-column: 3/4;
+	grid-row: 1/2;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0.5fr 5fr;
+	justify-items: center;
+	align-items: center;
+}
+
+.persona .invitadoBoton {
+	background-color: #e1efff;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+
+.invitadoBoton button {
+	color: #e1efff;
+	background-color: #f66b1d;
+	border: 3px solid #f66b1d;
+	border-radius: 15px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	width: 70%;
+	height: 70%;
+}
+
+.persona .muñeca {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	grid-column: 1/2;
+	grid-row: 2/3;
+}
+
+.persona img {
+	width: 90%;
+	height: 85%;
+	margin: 0 auto;
+	object-fit: contain;
+}

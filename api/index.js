@@ -36,7 +36,7 @@ db.connect();
 
 app.get('/', (req, res) => {
 	res.sendFile('landing page.html', {
-		root: './public',
+		root: './views/',
 	});
 });
 

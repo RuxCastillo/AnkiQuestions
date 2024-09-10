@@ -3,31 +3,39 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./landing page.css" />
+		<link rel="stylesheet" href="./landing page/main.css" />
 		<title>AnkiQuestions</title>
 	</head>
 	<body>
-		<main id="landingPage">
-			<div class="welcome">
+		<main id="landingPage" class="flex-center-all-column">
+			<section class="welcome">
 				<h2>Welcome to</h2>
 				<h1>AnkiQuestions!</h1>
-				<button class="btn btn-admin" onclick="location.href='/registrarse'">
+				<button
+					class="btn-welcome btn-admin"
+					onclick="location.href='/registrarse'"
+				>
 					Login <span class="span-admin">(Admin)</span>
 				</button>
-				<button class="btn btn-project" onclick="location.href='/app'">
+				<button class="btn-welcome btn-project" onclick="location.href='/app'">
 					See project
 				</button>
-				<img src="./libros.png" />
+				<img src="./landing page/assets/libros.png" />
 				<a href="#segundaPagina">
-					<button class="pageDown"><img src="./arrowdown.png" /></button>
+					<button class="pageDown">
+						<img src="./landing page/assets/arrowdown.png" />
+					</button>
 				</a>
-			</div>
-			<div class="demostration" id="demostration">
+			</section>
+			<section class="demostration" id="demostration">
 				<h3>Demostracion</h3>
 				<div class="step1">
 					<div class="imgOrange">
 						<div class="fondoNaranja"></div>
-						<img class="imagenFlotante1 flotantes" src="./reloj.png" />
+						<img
+							class="imagenFlotante1 flotantes"
+							src="./landing page/assets/reloj.png"
+						/>
 						<div class="sombra"></div>
 					</div>
 					<div class="pasosTitulo">
@@ -38,7 +46,10 @@
 				<div class="step2">
 					<div class="imgOrange">
 						<div class="fondoNaranja"></div>
-						<img class="imagenFlotante2 flotantes" src="./silbato.png" />
+						<img
+							class="imagenFlotante2 flotantes"
+							src="./landing page/assets/silbato.png"
+						/>
 						<div class="sombra"></div>
 					</div>
 					<div class="pasosTitulo">
@@ -52,7 +63,10 @@
 				<div class="step3">
 					<div class="imgOrange">
 						<div class="fondoNaranja"></div>
-						<img class="imagenFlotante3 flotantes" src="./trofeo.png" />
+						<img
+							class="imagenFlotante3 flotantes"
+							src="./landing page/assets/trofeo.png"
+						/>
 						<div class="sombra"></div>
 					</div>
 					<div class="pasosTitulo">
@@ -65,11 +79,11 @@
 				</div>
 				<a href="#terceraPagina">
 					<button class="pageDown">
-						<img id="flechaAbajo" src="./arrowdown.png" />
+						<img id="flechaAbajo" src="./landing page/assets/arrowdown.png" />
 					</button>
 				</a>
-			</div>
-			<div class="tercerP" id="terceraPagina">
+			</section>
+			<section class="tercerP" id="terceraPagina">
 				<div class="letras">
 					<div class="centerTitulo">
 						<h3>Results</h3>
@@ -108,10 +122,10 @@
 						<button onclick="location.href='/app'">See project</button>
 					</div>
 					<div class="muñeca">
-						<img src="./muñeca.png" />
+						<img src="./landing page/assets/muñeca.png" />
 					</div>
 				</div>
-			</div>
+			</section>
 		</main>
 	</body>
 </html>

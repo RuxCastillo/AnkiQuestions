@@ -1,0 +1,77 @@
+.welcome {
+	height: 80rem;
+	display: grid;
+	grid-template-columns: 2.2fr 2.2fr 3.6fr;
+	grid-template-rows: 1.5fr 2fr 2fr 3fr 1fr;
+	padding: 0px 10%;
+	justify-items: center;
+	align-items: center;
+	font-family: 'Roca one', serif;
+	font-weight: 100;
+}
+
+.welcome h1 {
+	grid-column: 1/3;
+	grid-row: 3/4;
+	align-self: start;
+	color: #1f5692;
+	font-size: 9rem;
+	font-weight: 100;
+}
+
+.welcome h2 {
+	grid-column: 1/3;
+	grid-row: 2/3;
+	align-self: end;
+	color: #1f5692;
+	font-size: 5.5rem;
+	font-weight: 100;
+}
+
+.welcome .btn-admin {
+	grid-column: 1/2;
+	color: #f66b1d;
+	background-color: #e1efff;
+	border: 3px solid #f66b1d;
+}
+
+.welcome .admin {
+	font-size: 1rem;
+}
+
+.welcome .btn-project {
+	grid-column: 2/3;
+	color: #e1efff;
+	background-color: #f66b1d;
+	border: none;
+	justify-self: start;
+}
+
+.welcome img {
+	grid-column: 3/5;
+	grid-row: 2/5;
+	height: 100%;
+}
+
+.welcome a {
+	grid-column: 1/5;
+	grid-row: 5/6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80%;
+}
+
+.welcome a .pageDown {
+	background-color: #f66b1d;
+	width: 5rem;
+	height: 4rem;
+	border-radius: 50%;
+	justify-self: center;
+	align-self: center;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}

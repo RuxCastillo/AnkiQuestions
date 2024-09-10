@@ -1,0 +1,32 @@
+.pageDown img {
+	width: 130%;
+	height: 160%;
+	position: relative;
+	top: 2px;
+}
+
+.flex-center-all {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-center-all-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-welcome {
+	font-weight: bold;
+	font-size: 1.5rem;
+	border-radius: 1.5rem;
+	width: 60%;
+	height: 20%;
+	grid-row: 4/5;
+	align-self: start;
+	margin: 2rem;
+	display: inline;
+	justify-self: end;
+}
