@@ -20,13 +20,13 @@
 
 .btn-welcome {
 	font-weight: bold;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	border-radius: 1.5rem;
-	width: 60%;
-	height: 20%;
-	grid-row: 4/5;
 	align-self: start;
 	margin: 2rem;
 	display: inline;
 	justify-self: end;
+	width: 25rem;
+	height: 6.5rem;
+	letter-spacing: 0.5px;
 }

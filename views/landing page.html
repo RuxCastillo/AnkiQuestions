@@ -9,82 +9,83 @@
 	<body>
 		<main id="landingPage" class="flex-center-all-column">
 			<section class="welcome">
-				<h2>Welcome to</h2>
-				<h1>AnkiQuestions!</h1>
-				<button
-					class="btn-welcome btn-admin"
-					onclick="location.href='/registrarse'"
-				>
-					Login <span class="span-admin">(Admin)</span>
-				</button>
-				<button class="btn-welcome btn-project" onclick="location.href='/app'">
-					See project
-				</button>
-				<img src="./landing page/assets/libros.png" />
-				<a href="#segundaPagina">
-					<button class="pageDown">
-						<img src="./landing page/assets/arrowdown.png" />
+				<div class="welcome__left">
+					<h2>Welcome to</h2>
+					<h1>AnkiQuestions!</h1>
+					<button
+						class="btn-welcome btn-admin"
+						onclick="location.href='/registrarse'"
+					>
+						Login <span class="span-admin">(Admin)</span>
 					</button>
-				</a>
+					<button
+						class="btn-welcome btn-project"
+						onclick="location.href='/app'"
+					>
+						See project
+					</button>
+				</div>
+				<div class="welcome__right">
+					<img src="./landing page/assets/libros.png" />
+				</div>
 			</section>
-			<section class="demostration" id="demostration">
+
+			<section class="demostration flex-center-all-column" id="demostration">
 				<h3>Demostracion</h3>
-				<div class="step1">
-					<div class="imgOrange">
-						<div class="fondoNaranja"></div>
-						<img
-							class="imagenFlotante1 flotantes"
-							src="./landing page/assets/reloj.png"
-						/>
-						<div class="sombra"></div>
+				<div class="demostration__main flex-center-all">
+					<div class="card step1">
+						<div class="imgOrange">
+							<div class="fondoNaranja"></div>
+							<img
+								class="imagenFlotante1 flotantes"
+								src="./landing page/assets/reloj.png"
+							/>
+							<div class="sombra"></div>
+						</div>
+						<div class="pasosTitulo">
+							<h4>Step 1</h4>
+						</div>
+						<p>Transform your study notes into question format</p>
 					</div>
-					<div class="pasosTitulo">
-						<h4>Step 1</h4>
+					<div class="card step2">
+						<div class="imgOrange">
+							<div class="fondoNaranja"></div>
+							<img
+								class="imagenFlotante2 flotantes"
+								src="./landing page/assets/silbato.png"
+							/>
+							<div class="sombra"></div>
+						</div>
+						<div class="pasosTitulo">
+							<h4>Step 2</h4>
+						</div>
+						<p>
+							Study by implementing techniques such as Active Recall and not
+							just Passive Learning in an easy way
+						</p>
 					</div>
-					<p>Transform your study notes into question format</p>
+					<div class="card step3">
+						<div class="imgOrange">
+							<div class="fondoNaranja"></div>
+							<img
+								class="imagenFlotante3 flotantes"
+								src="./landing page/assets/trofeo.png"
+							/>
+							<div class="sombra"></div>
+						</div>
+						<div class="pasosTitulo">
+							<h4>Step 3</h4>
+						</div>
+						<p>
+							By complementing your study with this website, you will achieve
+							your goals more quickly
+						</p>
+					</div>
 				</div>
-				<div class="step2">
-					<div class="imgOrange">
-						<div class="fondoNaranja"></div>
-						<img
-							class="imagenFlotante2 flotantes"
-							src="./landing page/assets/silbato.png"
-						/>
-						<div class="sombra"></div>
-					</div>
-					<div class="pasosTitulo">
-						<h4>Step 2</h4>
-					</div>
-					<p>
-						Study by implementing techniques such as Active Recall and not just
-						Passive Learning in an easy way
-					</p>
-				</div>
-				<div class="step3">
-					<div class="imgOrange">
-						<div class="fondoNaranja"></div>
-						<img
-							class="imagenFlotante3 flotantes"
-							src="./landing page/assets/trofeo.png"
-						/>
-						<div class="sombra"></div>
-					</div>
-					<div class="pasosTitulo">
-						<h4>Paso 3</h4>
-					</div>
-					<p>
-						By complementing your study with this website, you will achieve your
-						goals more quickly
-					</p>
-				</div>
-				<a href="#terceraPagina">
-					<button class="pageDown">
-						<img id="flechaAbajo" src="./landing page/assets/arrowdown.png" />
-					</button>
-				</a>
 			</section>
-			<section class="tercerP" id="terceraPagina">
-				<div class="letras">
+
+			<section class="tercerP flex-center-all" id="terceraPagina">
+				<div class="letras flex-center-all-column">
 					<div class="centerTitulo">
 						<h3>Results</h3>
 					</div>
@@ -117,7 +118,7 @@
 					<div class="textos texto3">Normal study</div>
 					<div class="textos texto4">With AnkiQuestions</div>
 				</div>
-				<div class="persona">
+				<div class="persona flex-center-all">
 					<div class="invitadoBoton">
 						<button onclick="location.href='/app'">See project</button>
 					</div>
