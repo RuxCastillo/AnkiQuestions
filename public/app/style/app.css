@@ -1,0 +1,23 @@
+#app {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex-direction: column;
+}
+
+.app__question {
+	height: 40rem;
+	width: 160rem;
+	transform: translateY(-25rem);
+	font-size: 4rem;
+	text-align: center;
+}
+
+.app__button {
+	display: flex;
+	justify-content: space-between;
+	width: 20%;
+}

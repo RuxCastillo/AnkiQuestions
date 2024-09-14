@@ -1,0 +1,7 @@
+.logo {
+	position: absolute;
+	left: 1.5rem;
+	top: 1.5rem;
+	font-size: 4rem;
+	color: var(--tertiary-color);
+}

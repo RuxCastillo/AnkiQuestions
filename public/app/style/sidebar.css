@@ -1,0 +1,46 @@
+#sidebar {
+	height: 100%;
+	width: 40rem;
+	background-color: var(--secondary-color);
+	position: absolute;
+	right: 0;
+	display: flex;
+	transition: transform 0.5s ease;
+	box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+	z-index: 2;
+}
+
+#sidebar.hide {
+	transform: translateX(30rem);
+}
+
+.sidebar__icons {
+	width: 10rem;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.icon:first-of-type {
+	border-bottom: 2px solid black;
+	padding-bottom: 3rem;
+	margin-bottom: 0;
+}
+
+.icon {
+	margin: 3rem auto;
+	font-size: 4rem;
+}
+
+.icon:last-of-type {
+	margin-top: auto;
+}
+
+.fa-bars {
+}
+
+.sidebar__letters {
+	width: 30rem;
+	height: 100%;
+}

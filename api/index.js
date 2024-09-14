@@ -41,7 +41,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/app', (req, res) => {
-	res.render('laApp');
+	res.sendFile('app.html', {
+		root: './views/',
+	});
 });
 
 app.get('/obteniendoPregunta', async (req, res) => {
