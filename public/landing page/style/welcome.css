@@ -40,7 +40,7 @@
 
 .welcome .btn-admin {
 	color: #f66b1d;
-	background-color: #e1efff;
+	background-color: #f7f7f7;
 	border: 3px solid #f66b1d;
 }
 
@@ -49,11 +49,21 @@
 }
 
 .welcome .btn-project {
-	color: #e1efff;
+	color: #f7f7f7;
 	background-color: #f66b1d;
 	border: none;
 }
 
 .welcome img {
 	height: 100%;
+}
+
+@media (max-width: 1050px) {
+	.welcome img {
+		display: none;
+	}
+	.welcome {
+		padding-top: 10rem;
+		height: 90rem;
+	}
 }

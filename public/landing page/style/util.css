@@ -30,3 +30,7 @@
 	height: 6.5rem;
 	letter-spacing: 0.5px;
 }
+
+button:active {
+	transform: scale(0.98);
+}

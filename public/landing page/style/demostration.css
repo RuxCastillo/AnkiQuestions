@@ -1,5 +1,5 @@
 .demostration {
-	height: 80rem;
+	height: 70rem;
 	font-family: 'Roca one', serif;
 	transform: translateY(-10rem);
 	width: 100%;
@@ -8,7 +8,7 @@
 .demostration h3 {
 	font-size: 8rem;
 	font-weight: 100;
-	color: #1f5692;
+	color: var(--tertiary-color);
 	margin-bottom: 5rem;
 }
 
@@ -100,4 +100,17 @@
 	text-align: center;
 	font-weight: 400;
 	font-family: sans-serif;
+}
+
+@media (max-width: 1050px) {
+	.demostration {
+		height: 150rem;
+	}
+	.demostration__main {
+		flex-direction: column;
+		height: 145rem;
+	}
+	.step3 {
+		transform: translateY(5rem);
+	}
 }
