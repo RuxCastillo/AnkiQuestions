@@ -10,8 +10,7 @@
 
 .app__question {
 	height: 40rem;
-	width: 160rem;
-	transform: translateY(-25rem);
+	max-width: 160rem;
 	font-size: 4rem;
 	text-align: center;
 }
@@ -20,4 +19,33 @@
 	display: flex;
 	justify-content: space-between;
 	width: 20%;
+	margin: 4rem;
+}
+
+.current-category {
+	position: absolute;
+	right: 25rem;
+	margin: 1rem;
+	font-size: 4rem;
+}
+
+.answer {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border: 5px solid var(--secondary-color);
+	border-radius: 15px;
+	left: 50%;
+	z-index: 3;
+	top: 50%;
+	background-color: white;
+	height: 70%;
+	width: 70%;
+	padding: 5%;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	font-size: 3rem;
+	transition: top 0.5s ease-out;
+}
+
+.answer.hide {
+	top: -100%;
 }

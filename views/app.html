@@ -18,18 +18,31 @@
 				<i class="icon fa-solid fa-file"></i>
 				<i class="icon fa-solid fa-pen"></i>
 				<i class="icon fa-solid fa-magnifying-glass"></i>
-				<i class="icon fa-solid fa-clipboard"></i>
-				<i class="icon fa-solid fa-right-to-bracket"></i>
+				<!-- 				<i class="icon fa-solid fa-clipboard"></i> -->
+				<i
+					class="icon fa-solid fa-right-to-bracket"
+					onClick="location.href='/'"
+				></i>
 			</div>
 			<div class="sidebar__letters">
-				<h3 class="categories"></h3>
+				<div class="categories">
+					<h3>Categories</h3>
+					<button>All</button>
+				</div>
 			</div>
 		</section>
 		<div class="logo">AnkiQuestions</div>
+		<span class="current-category">All</span>
 		<section id="app">
 			<div class="app__question">Question Here</div>
 			<div class="app__button">
 				<button class="btn app__answer">See Answer</button>
+				<div class="answer hide">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+					molestias consequuntur iusto tempora rem in iure dolor nam! Possimus,
+					aliquam. Cumque excepturi, cupiditate officiis illum fuga earum
+					quisquam numquam unde.
+				</div>
 				<button class="btn app__next">Next Question</button>
 			</div>
 		</section>

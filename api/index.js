@@ -54,7 +54,7 @@ app.get('/obteniendoPregunta', async (req, res) => {
 				.status(400)
 				.send('Falta el parametro de la categoria para enviarla');
 		}
-		if (buscandoCategoria === 'Categoria Actual') {
+		if (buscandoCategoria === 'All') {
 			let result = await db.query(postgreRoutes.unaPreguntaRandomTodo, []);
 			let response = result.rows[0];
 			res.send(response);
