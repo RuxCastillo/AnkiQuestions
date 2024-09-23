@@ -27,6 +27,7 @@ const db = new pg.Client({
 	password: process.env.POSTGRES_PASSWORD,
 	port: process.env.POSTGRES_PORT,
 	connectionTimeoutMillis: 20000,
+	idleTimeoutMillis: 30000,
 	ssl: {
 		rejectUnauthorized: false,
 	},
