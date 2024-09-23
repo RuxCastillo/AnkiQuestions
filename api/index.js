@@ -36,13 +36,13 @@ db.connect();
 
 app.get('/', (req, res) => {
 	res.sendFile('landing page.html', {
-		root: './views/',
+		root: path.join(__dirname, '../views'),
 	});
 });
 
 app.get('/app', (req, res) => {
 	res.sendFile('app.html', {
-		root: './views/',
+		root: path.join(__dirname, '../views'),
 	});
 });
 

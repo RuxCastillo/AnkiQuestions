@@ -49,3 +49,10 @@
 .answer.hide {
 	top: -100%;
 }
+
+.app__answer {
+	margin: 1rem;
+}
+.app__next {
+	margin: 1rem;
+}
