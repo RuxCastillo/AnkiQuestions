@@ -28,12 +28,15 @@ const db = new pg.Client({
 	port: process.env.POSTGRES_PORT,
 	connectionTimeoutMillis: 20000,
 	idleTimeoutMillis: 30000,
+	max: 10,
 	ssl: {
 		rejectUnauthorized: false,
 	},
 });
 
-db.connect();
+db.connect().catch((err) =>
+	console.error('Error de node a la base de datos', err)
+);
 
 app.get('/', (req, res) => {
 	res.sendFile('landing page.html', {
@@ -56,7 +59,7 @@ app.get('/obteniendoPregunta', async (req, res) => {
 				.send('Falta el parametro de la categoria para enviarla');
 		}
 		if (buscandoCategoria === 'All') {
-			let result = await db.query(postgreRoutes.unaPreguntaRandomTodo, []);
+			let result = await db.query(postgreRoutes.unaPreguntaRandomTodo);
 			let response = result.rows[0];
 			res.send(response);
 		} else {

@@ -1,40 +1,39 @@
 .demostration {
 	height: 70rem;
 	font-family: 'Roca one', serif;
-	transform: translateY(-10rem);
 	width: 100%;
 }
 
 .demostration h3 {
-	font-size: 8rem;
+	font-size: 7rem;
 	font-weight: 100;
 	color: var(--tertiary-color);
-	margin-bottom: 5rem;
+	margin-bottom: 2.5rem;
 }
 
 .demostration__main {
-	height: 50rem;
+	height: 60rem;
 	width: 100%;
 	justify-content: space-evenly;
 }
 
 .card {
 	color: #1f5692;
-	width: 40rem;
+	width: 45rem;
 	padding: 2rem;
-	height: 50rem;
 }
 
 .imgOrange {
-	height: 30rem;
-	width: 35rem;
+	height: 25rem;
+	width: 30rem;
 	position: relative;
+	margin: auto;
 	margin-bottom: 4rem;
 }
 
 .fondoNaranja {
-	height: 30rem;
-	width: 35rem;
+	height: 25rem;
+	width: 30rem;
 	position: absolute;
 	color: #f66b1d;
 	border-radius: 25px;
@@ -110,7 +109,11 @@
 		flex-direction: column;
 		height: 145rem;
 	}
-	.step3 {
-		transform: translateY(5rem);
+	.demostration p {
+		padding-top: 2px;
+	}
+	.imagenFlotante3 {
+		top: -15px;
+		left: -20px;
 	}
 }

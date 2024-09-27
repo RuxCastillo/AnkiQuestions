@@ -1,10 +1,3 @@
-.pageDown img {
-	width: 130%;
-	height: 160%;
-	position: relative;
-	top: 2px;
-}
-
 .flex-center-all {
 	display: flex;
 	justify-content: center;

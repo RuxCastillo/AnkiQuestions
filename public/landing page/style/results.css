@@ -1,5 +1,5 @@
 .tercerP {
-	height: 80vh;
+	min-height: 90rem;
 	width: 100%;
 	clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
 	background-color: var(--primary-color);
@@ -148,7 +148,7 @@
 .textos {
 	font-size: 2rem;
 	font-family: sans-serif;
-	transform: rotate(-45deg) translate(-20px, 40px);
+	transform: rotate(-45deg) translate(-10px, 40px);
 	display: inline-block;
 }
 
