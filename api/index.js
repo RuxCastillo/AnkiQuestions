@@ -177,3 +177,20 @@ app.get('/solicitandocategorias', async (req, res) => {
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
 });
+
+app.get('/preguntas', async (req, res) => {
+	const htmlPreguntas = `
+			<div class="app__question">Question Here</div>
+			<div class="app__button">
+				<button class="btn app__answer">See Answer</button>
+				<div class="answer hide">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem
+					molestias consequuntur iusto tempora rem in iure dolor nam! Possimus,
+					aliquam. Cumque excepturi, cupiditate officiis illum fuga earum
+					quisquam numquam unde.
+				</div>
+				<button class="btn app__next">Next Question</button>
+			</div>`;
+
+	res.send(htmlPreguntas);
+});

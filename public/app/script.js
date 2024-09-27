@@ -1,16 +1,15 @@
 const sidebar = document.getElementById('sidebar');
 const sidebarbutton = document.querySelector('.fa-bars');
-const answerButton = document.querySelector('.app__answer');
-const answerOfQuestion = document.querySelector('.answer');
+const app = document.querySelector('#app');
+const casa = document.querySelector('.fa-house');
+let answerButton = document.querySelector('.app__answer');
+let answerOfQuestion = document.querySelector('.answer');
 
 import nextQuestion from './script/next question.js';
 import activandoCategorias from './script/categories.js';
+import endPointToInnerHTML from './script/fetch.js';
 
-nextQuestion();
 activandoCategorias();
-
-answerButton.addEventListener('click', answerToggle);
-answerOfQuestion.addEventListener('click', answerToggle);
 
 function answerToggle() {
 	answerOfQuestion.classList.toggle('hide');
@@ -18,4 +17,15 @@ function answerToggle() {
 
 sidebarbutton.addEventListener('click', () => {
 	sidebar.classList.toggle('hide');
+});
+
+casa.addEventListener('click', () => {
+	endPointToInnerHTML('/preguntas');
+	setTimeout(() => {
+		nextQuestion();
+		answerButton = document.querySelector('.app__answer');
+		answerOfQuestion = document.querySelector('.answer');
+		answerButton.addEventListener('click', answerToggle);
+		answerOfQuestion.addEventListener('click', answerToggle);
+	}, 500);
 });
