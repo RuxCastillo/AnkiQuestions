@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 const contraseña = process.env.CONTRA;
 
-const db = new pg.Client({
+const db = new pg.Pool({
 	user: process.env.POSTGRES_USER,
 	host: process.env.POSTGRES_HOST,
 	database: process.env.POSTGRES_DATABASE,
