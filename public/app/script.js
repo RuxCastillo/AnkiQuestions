@@ -4,10 +4,12 @@ const app = document.querySelector('#app');
 const casa = document.querySelector('.fa-house');
 let answerButton = document.querySelector('.app__answer');
 let answerOfQuestion = document.querySelector('.answer');
+const hojaPapel = document.querySelector('.fa-file');
 
 import nextQuestion from './script/next question.js';
 import activandoCategorias from './script/categories.js';
 import endPointToInnerHTML from './script/fetch.js';
+import creacionPreguntas from './script/create.js';
 
 activandoCategorias();
 
@@ -27,5 +29,12 @@ casa.addEventListener('click', () => {
 		answerOfQuestion = document.querySelector('.answer');
 		answerButton.addEventListener('click', answerToggle);
 		answerOfQuestion.addEventListener('click', answerToggle);
+	}, 500);
+});
+
+hojaPapel.addEventListener('click', () => {
+	endPointToInnerHTML('/creacion');
+	setTimeout(() => {
+		creacionPreguntas();
 	}, 500);
 });

@@ -1,0 +1,61 @@
+.create {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 5rem;
+	align-items: center;
+	font-size: 1.8rem;
+}
+
+.create * {
+	margin: 1rem;
+}
+
+.create h3 {
+	font-size: 5rem;
+}
+
+.create textarea {
+	width: 80rem;
+	height: 35rem;
+	padding: 2.5rem;
+	font-family: inherit;
+	font-size: 1.7rem;
+	border: 3px solid var(--secondary-color);
+	border-radius: 15px;
+}
+
+.create textarea:focus {
+	border: 5px solid var(--secondary-color);
+	outline: 0;
+}
+
+.create div {
+	background-color: white;
+	border-radius: 50px;
+	border: 3px solid var(--secondary-color);
+	padding: 0.5rem;
+}
+
+.create button {
+	padding: 1rem;
+	color: white;
+	background-color: var(--secondary-color);
+	font-size: 1.6rem;
+	border: 0;
+	border-radius: 15px;
+}
+
+.create label {
+}
+
+.create select {
+	line-height: 3rem;
+	border: 0;
+	font-size: 1.6rem;
+}
+
+.create select:focus {
+	outline: 0;
+}

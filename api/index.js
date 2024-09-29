@@ -78,7 +78,6 @@ app.get('/obteniendoPregunta', async (req, res) => {
 
 app.post('/agregarPregunta', async (req, res) => {
 	if (
-		!todo ||
 		req.body.preguntacrear === '' ||
 		req.body.respuestacrear === '' ||
 		req.body.categoriacrear === ''
@@ -87,6 +86,7 @@ app.post('/agregarPregunta', async (req, res) => {
 			.status(400)
 			.send('Falta el parametro para agregar pregunta nueva');
 	}
+	console.log(req.body);
 	const { preguntacrear, respuestacrear, categoriacrear } = req.body;
 	try {
 		const result = await db.query(postgreRoutes.crearPregunta, [
@@ -193,4 +193,30 @@ app.get('/preguntas', async (req, res) => {
 			</div>`;
 
 	res.send(htmlPreguntas);
+});
+
+app.get('/creacion', async (req, res) => {
+	const htmlCreacion = `			<form class="create">
+				<h3>Create question</h3>
+
+				<textarea
+					name="preguntacrear"
+					class="crearPregunta"
+					placeholder="Write the question here..."
+				></textarea>
+				<textarea
+					name="respuestacrear"
+					class="crearRespuesta"
+					placeholder="Write the answer here..."
+				></textarea>
+				<div>
+				<label for="create-categories">Select category:</label>
+				<select name="categoriacrear" id="create-categories" class="crearNuevaCategoria">
+					<option value="">Choose the appropriate category</option>
+				</select>
+				</div>
+				<button type="submit">Add question to database</button>
+			</form>`;
+
+	res.send(htmlCreacion);
 });
