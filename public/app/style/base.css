@@ -19,3 +19,27 @@ html {
 	justify-content: center;
 	align-items: center;
 }
+
+@media (max-width: 1050px) {
+	html {
+		font-size: 57%;
+	}
+}
+
+@media (max-width: 950px) {
+	html {
+		font-size: 47.5%;
+	}
+}
+
+@media (max-width: 600px) {
+	html {
+		font-size: 42%;
+	}
+}
+
+@media (max-width: 450px) {
+	html {
+		font-size: 37.5%;
+	}
+}

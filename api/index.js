@@ -108,6 +108,7 @@ app.get('/crearoeditar', (req, res) => {
 
 app.get('/obteniendoinfoporidparaeditar', async (req, res) => {
 	let elIdPreguntaAEditar = req.query.id;
+	console.log(elIdPreguntaAEditar);
 	if (!elIdPreguntaAEditar) {
 		return res
 			.status(400)
@@ -116,9 +117,11 @@ app.get('/obteniendoinfoporidparaeditar', async (req, res) => {
 			);
 	}
 	try {
+		console.log('hola');
 		let result = await db.query(postgreRoutes.obtenerUnaPreguntaPorId, [
 			elIdPreguntaAEditar,
 		]);
+		console.log(result.rows);
 		res.send(result.rows);
 	} catch (err) {
 		res
@@ -219,4 +222,30 @@ app.get('/creacion', async (req, res) => {
 			</form>`;
 
 	res.send(htmlCreacion);
+});
+
+app.get('/edit', async (req, res) => {
+	const htmlEdit = `			<form class="editar">
+				<div class="titulo">
+					<h3>Edit questions</h3>
+					<input type="number" class="editarNumId" />
+					<button type="button" class="editarBuscarId">Buscar ID</button>
+				</div>
+				<div class="textareas">
+					<textarea class="editarPregunta" id="lapregunta"></textarea>
+					<textarea class="editarRespuesta"></textarea>
+				</div>
+				<div class="edit-categorie">
+					<label for="edit-categories">Select category:</label>
+					<select
+						name="categoriacrear"
+						id="edit-categories"
+						class="editarNuevaCategoria"
+					>
+						<option value="">Choose the appropriate category</option>
+					</select>
+				</div>
+				<button class="button-submit">Edit question</button>
+			</form> `;
+	res.send(htmlEdit);
 });

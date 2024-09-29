@@ -5,11 +5,13 @@ const casa = document.querySelector('.fa-house');
 let answerButton = document.querySelector('.app__answer');
 let answerOfQuestion = document.querySelector('.answer');
 const hojaPapel = document.querySelector('.fa-file');
+const lapiz = document.querySelector('.fa-pen');
 
 import nextQuestion from './script/next question.js';
 import activandoCategorias from './script/categories.js';
 import endPointToInnerHTML from './script/fetch.js';
 import creacionPreguntas from './script/create.js';
+import editarPregunta from './script/edit.js';
 
 activandoCategorias();
 
@@ -36,5 +38,12 @@ hojaPapel.addEventListener('click', () => {
 	endPointToInnerHTML('/creacion');
 	setTimeout(() => {
 		creacionPreguntas();
+	}, 500);
+});
+
+lapiz.addEventListener('click', () => {
+	endPointToInnerHTML('/edit');
+	setTimeout(() => {
+		editarPregunta();
 	}, 500);
 });

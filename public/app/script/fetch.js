@@ -13,6 +13,13 @@ function endPointToInnerHTML(section) {
 		app.innerHTML = str;
 	}
 	fetchNormal(section);
+
+	let categoriaDesaparecer = document.querySelector('.current-category');
+	if (section === '/preguntas') {
+		categoriaDesaparecer.style.display = 'block';
+	} else {
+		categoriaDesaparecer.style.display = 'none';
+	}
 }
 
 export default endPointToInnerHTML;

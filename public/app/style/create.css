@@ -59,3 +59,13 @@
 .create select:focus {
 	outline: 0;
 }
+
+@media (max-width: 1050px) {
+	.create {
+		position: relative;
+		right: 5rem;
+	}
+	.create textarea {
+		width: 85%;
+	}
+}
