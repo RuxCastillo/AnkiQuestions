@@ -59,6 +59,7 @@
 
 @media (max-width: 1050px) {
 	.editar {
+		width: 85%;
 		padding-top: 5rem;
 		position: relative;
 		right: 5rem;

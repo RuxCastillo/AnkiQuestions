@@ -62,6 +62,7 @@
 
 @media (max-width: 1050px) {
 	.create {
+		width: 85%;
 		position: relative;
 		right: 5rem;
 	}
