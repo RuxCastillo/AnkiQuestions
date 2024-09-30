@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import env from 'dotenv';
 import pg from 'pg';
 import postgreRoutes from './postgresql.js';
+import cors from 'cors';
 
 env.config();
 
@@ -15,6 +16,12 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+/* app.use(
+	cors({
+		origin: 'https://ruxcastillo.github.io/',
+	})
+); */
+app.use(cors());
 //app.use(express.static(path.join(__dirname, '../views')));
 //app.set('view engine', 'html');
 
@@ -253,4 +260,22 @@ app.get('/edit', async (req, res) => {
 app.post('/portafolio', async (req, res) => {
 	const formulario = req.body;
 	console.log(formulario);
+	if (
+		formulario.nombre === '' ||
+		formulario.email === '' ||
+		formulario.mensaje === ''
+	) {
+		return res.status(400).send("Please don't leave any blank spaces.");
+	}
+	const { nombre, email, mensaje } = formulario;
+	try {
+		const result = await db.query(postgreRoutes.agregarPortafolio, [
+			nombre,
+			email,
+			mensaje,
+		]);
+		res.status(200).send('Message added to the database.');
+	} catch (err) {
+		return res.status(500).send('Error adding message to the database.');
+	}
 });
