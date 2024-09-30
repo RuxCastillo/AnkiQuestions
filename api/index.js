@@ -249,3 +249,8 @@ app.get('/edit', async (req, res) => {
 			</form> `;
 	res.send(htmlEdit);
 });
+
+app.post('/portafolio', async (req, res) => {
+	const formulario = req.body;
+	console.log(formulario);
+});
